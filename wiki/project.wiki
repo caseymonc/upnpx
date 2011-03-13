@@ -2,4 +2,20 @@
 
 The source tree contains a number of XCode projects and is organized as follow:
 
+*Mac OS X*
+|| main project || upnpx/projects/macos/upnpx.xcodeproj ||
+|| build || upnpx/projects/macos/build ||
+
+*iOS*
+|| main project || upnpx/projects/ios/upnpx.xcodeproj ||
+|| build || upnpx/projects/ios/build ||
+
+*Sources*
+
+|| source files || upnpx/src ||
+
+*Header files:*
+|| Public Headers || upnpx/src/api || This include should contain all headers needed by developers using libupnpx.a ||
+
+
 http://upnpx.googlecode.com/svn/wiki/images/project_structure.png
