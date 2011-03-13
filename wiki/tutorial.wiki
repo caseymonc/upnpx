@@ -1,9 +1,8 @@
 #labels upnpx,tutorial
-
 Good UPnP documentation is available at at the website http://upnp.org.
 The architecture is described in the following document [http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.1.pdf UPNP Device Architecture Document]  
 
-An UPnP session exist of several steps: 
+A UPnP session exist of several steps: 
  * Addressing
  * Discovery 
  * Description
