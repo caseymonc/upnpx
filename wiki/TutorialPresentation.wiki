@@ -1,5 +1,3 @@
-#sidebar tutorial
-
-[tutorial Tutorial Home]
+#sidebar TutorialIndex
 
 == 5. Presentation ==
