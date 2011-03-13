@@ -1,14 +1,52 @@
-#summary One-sentence summary of this page.
 #labels upnpx,tutorial
+= Tutorial =
 
-= Introduction =
+Good UPnP documentation is available at at the website http://upnp.org.
+The architecture is described in the following document [http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.1.pdf UPNP Device Architecture Document]  
 
-Add your content here.
+An UPnP session exist of several steps: 
+ * Addressing
+ * Discovery 
+ * Description
+ * Control 
+ * Eventing
+ * Presentation
 
+upnpx is an implementation of the UPnP specification and has API functions for these steps. This tutorial give simple examples ho to use the upnpx API and build your own UPnP client.
 
-= Details =
+=== 0. Addressing ===
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+According to the specs : _"Through addressing, devices and control points get a network address"_
+In our case it means that your device have to get an IP address, since the OS handles this task we are lucky and don't have to do much. Just be sure you actually are connected to the network and have an IP address before using upnpx.
+
+=== 1. Discovery ===
+
+During the discovery step we will search for any UPnP device on the local network. upnpx implements the ssdp protocol (Simple Device Discovery Protocol) an maintains an in memory database of all devices on the network, it  will automatically update this database when new devices are added or removed.
+
+In code:
+
+Get a pointer to the discovery database via the UPnPManager: 
+
+{{{
+#import "UPnPManager.h"
+#import "UPnPDB.h"
+
+UPnPDB* db = [[UPnPManager GetInstance] DB];
+[db addObserver:(UPnPDBObserver*)self];
+
+//
+// Interface UPnPDBObserver
+//
+-(void)UPnPDBWillUpdate:(UPnPDB*)sender{
+
+}
+-(void)UPnPDBUpdated:(UPnPDB*)sender{
+
+}
+
+}}}
+
+=== Description ===
+=== Control ===
+=== Eventing ===
+=== Presentation ===
