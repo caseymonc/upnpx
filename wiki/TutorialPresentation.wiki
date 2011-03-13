@@ -1,3 +1,5 @@
+#sidepage tutorial
+
 [tutorial Tutorial Home]
 
 == 5. Presentation ==
