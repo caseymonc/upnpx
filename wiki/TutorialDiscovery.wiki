@@ -1,3 +1,4 @@
+#labels upnp,tutorial,Discovery
 #sidebar TutorialIndex
 
 == 1. Discovery ==
