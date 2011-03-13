@@ -2,7 +2,7 @@
 
 == 0. Addressing ==
 
-According to the specs : "Through addressing, devices and control points get a network address".
+According to the specifications : "Through addressing, devices and control points get a network address".
 
 Basically it means that your device have to get an IP address, since the OS handles this task we are lucky and don't have to do much. Just be sure you actually are connected to the network and have an IP address before using upnpx.
 
