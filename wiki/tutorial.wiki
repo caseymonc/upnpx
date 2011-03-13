@@ -10,7 +10,7 @@ A UPnP session exist of several stages:
  * 4. Eventing
  * 5. Presentation
 
-upnpx is an implementation of the UPnP specification and has API functions for the different stages. This tutorial give simple examples how to use the upnpx API in order to build your own UPnP client. This tutorial handles the 6 individual steps and starts at [tutaddressing Step 0. Addressing].
+upnpx is an implementation of the UPnP specification and has API functions for the different stages. This tutorial give simple examples how to use the upnpx API in order to build your own UPnP client. This tutorial handles the 6 individual steps and starts at [TutorialAddressing Step 0. Addressing].
 
 Jump to Tutorial:
  * [TutorialAddressing Step 0. Addressing]
