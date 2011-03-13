@@ -1,5 +1,7 @@
 #sidebar [TutorialDiscovery Step 1. Discovery ]
 
+[tutorial Tutorial Home]
+
 == 1. Discovery ==
 
 During Discovery we will search for any UPnP device on the local network. upnpx implements the ssdp protocol (Simple Device Discovery Protocol) and maintains an in memory database of all devices on the network, it  will automatically update this database when new devices are added or removed.
