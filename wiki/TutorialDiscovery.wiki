@@ -1,5 +1,3 @@
-#sidebar [TutorialDiscovery Step 1. Discovery ]
-
 [tutorial Tutorial Home]
 
 == 1. Discovery ==
