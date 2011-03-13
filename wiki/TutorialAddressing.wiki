@@ -1,4 +1,4 @@
-#sidebar NameOfPage
+[tutorial Tutorial Home]
 
 == 0. Addressing ==
 
