@@ -1,4 +1,4 @@
-= 0. Addressing =
+== 0. Addressing ==
 
 According to the specs : "Through addressing, devices and control points get a network address".
 
