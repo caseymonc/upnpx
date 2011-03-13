@@ -19,5 +19,3 @@ Jump to Tutorial:
  * [TutorialControl Step 3. Control ]
  * [TutorialEventing Step 4. Eventing]
  * [TutorialPresentation Step 5. Presentation]
-
-[TutorialIndex Index]
