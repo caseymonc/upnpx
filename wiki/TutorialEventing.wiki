@@ -1,3 +1,3 @@
-= 4. Eventing =
+== 4. Eventing ==
 
 Next: [TutorialPresentation Step 5. Presentation]
