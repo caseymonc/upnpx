@@ -21,7 +21,7 @@ In our case it means that your device have to get an IP address, since the OS ha
 
 === 1. Discovery ===
 
-During the discovery step we will search for any UPnP device on the local network. upnpx implements the ssdp protocol (Simple Device Discovery Protocol) an maintains an in memory database of all devices on the network, it  will automatically update this database when new devices are added or removed.
+During the discovery step we will search for any UPnP device on the local network. upnpx implements the ssdp protocol (Simple Device Discovery Protocol) and maintains an in memory database of all devices on the network, it  will automatically update this database when new devices are added or removed.
 
 In code:
 
