@@ -2,4 +2,4 @@
 
 
 
-Next : [TutorialControl Step 3. Control ]
+Next [TutorialControl Step 3. Control ]
