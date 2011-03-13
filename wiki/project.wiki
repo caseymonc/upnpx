@@ -1,3 +1,5 @@
 ==Project structure ==
 
 The source tree contains a number of XCode projects and is organized as follow:
+
+http://upnpx.googlecode.com/svn/wiki/images/project_structure.png
