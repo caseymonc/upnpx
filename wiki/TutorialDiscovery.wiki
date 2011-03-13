@@ -28,4 +28,5 @@ UPnPDB* db = [[UPnPManager GetInstance] DB];
 }}}
 
 
-Next: [TutorialDescription Step 2. Description]
+
+Next [TutorialDescription Step 2. Description]
