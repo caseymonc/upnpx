@@ -1,3 +1,4 @@
+#labels upnp,tutorial,description
 #sidebar TutorialIndex
 
 ==  Description ==
