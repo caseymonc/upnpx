@@ -1,0 +1,19 @@
+#summary One-sentence summary of this page.
+#labels libupnpx.a
+
+== Build and use libupnpx.a  ==
+
+Open and build the project:
+./upnpx/projects/macos/upnpx/upnpx.xcodeproj
+
+For a Debug build, the result is the upnpx static library:
+./upnpx/projects/macos/upnpx/build/Debug/libupnpx.a
+
+
+== Use libupnpx.a in your own project ==
+
+ * Link against libupnpx.a
+ * Include the upnpx API header files
+
+
+Example, my ‘hello world’ iPhone project
