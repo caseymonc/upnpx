@@ -1,7 +1,7 @@
-#summary One-sentence summary of this page.
 #labels libupnpx.a
+#Build and use libupnpx.a.
 
-== Build and use libupnpx.a  ==
+== Build libupnpx.a  ==
 
 Open and build the project:
 ./upnpx/projects/macos/upnpx/upnpx.xcodeproj
