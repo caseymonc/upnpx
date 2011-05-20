@@ -1,5 +1,5 @@
 #labels libupnpx.a
-#Build and use libupnpx.a.
+#Build and use libupnpx.a.#
 
 == Build libupnpx.a  ==
 
