@@ -1,19 +1,16 @@
 #labels libupnpx.a
-#Build and use libupnpx.a.#
-
 == Build libupnpx.a  ==
 
-Open and build the project:
-./upnpx/projects/macos/upnpx/upnpx.xcodeproj
+Before using the library you have to build the desired version. 
 
-For a Debug build, the result is the upnpx static library:
-./upnpx/projects/macos/upnpx/build/Debug/libupnpx.a
+ * use XCode 4.n and open the project: *./upnpx/projects/ios/upnpx/upnpx.xcodeproj*
+
+during this tutorial we will create a simple project for the iPhone Simulator, so you need to change the build scheme to "upnpx | iPhone n.n Simulator".
+ 
+
+ * Build the project:
+
+The result is the upnpx static library: *libupnpx.a*
 
 
-== Use libupnpx.a in your own project ==
-
- * Link against libupnpx.a
- * Include the upnpx API header files
-
-
-Example, my ‘hello world’ iPhone project
+ * If you built the iPhone Simulator Debug build, the library will be found at: *./upnpx/projects/ios/upnpx/build/Debug-iphonesimulator/libupnpx.a*
