@@ -3,6 +3,7 @@
 
 ==  Description ==
 
-
+For the control point to learn more about the device and its capabilities, or to interact with the 
+device, the control point MUST retrieve a *description* of the device and its capabilities from the URL provided by the device in the discovery message.
 
 Next [TutorialControl Step 3. Control ]
