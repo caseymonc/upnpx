@@ -11,51 +11,24 @@ In code (see : project upnpxdemo)
 
 1. Implement the Interface *UPnPDBObserver*: 
 {{{
-//
 //  RootViewController.h
-//  upnpxdemo
-//
-//  Created by Bruno Keymolen on 22/05/11.
-//  Copyright Bruno Keymolen 2011. All rights reserved.
-//
-
-#import <UIKit/UIKit.h>
 
 #import "UPnPDB.h"
 
 @interface RootViewController : UITableViewController <UPnPDBObserver>{
+	NSArray *mDevices; //BasicUPnPDevice*
 }
 
 
 //protocol UPnPDBObserver
 -(void)UPnPDBWillUpdate:(UPnPDB*)sender;
 -(void)UPnPDBUpdated:(UPnPDB*)sender;
-
-
-@end
 }}}
 
 
 2. Get a pointer to the discovery database via the UPnPManager and call SSDP Search: 
 {{{
-//
 //  RootViewController.m
-//  upnpxdemo
-//
-//  Created by Bruno Keymolen on 22/05/11.
-//  Copyright Bruno Keymolen 2011. All rights reserved.
-//
-
-#import "RootViewController.h"
-
-#import "UPnPManager.h"
-
-
-@implementation RootViewController
-
-
-#pragma mark -
-#pragma mark View lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,6 +37,10 @@ In code (see : project upnpxdemo)
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     UPnPDB* db = [[UPnPManager GetInstance] DB];
+    
+    mDevices = [db rootDevices]; //BasicUPnPDevice
+	[mDevices retain];
+
     [db addObserver:(UPnPDBObserver*)self];
     
     [[[UPnPManager GetInstance] SSDP] searchSSDP]; 	
@@ -76,11 +53,11 @@ In code (see : project upnpxdemo)
 {{{
 //protocol UPnPDBObserver
 -(void)UPnPDBWillUpdate:(UPnPDB*)sender{
-    NSLog(@"UPnPDBWillUpdate");
+    NSLog(@"UPnPDBWillUpdate %d", [mDevices count]);
 }
 
 -(void)UPnPDBUpdated:(UPnPDB*)sender{
-    NSLog(@"UPnPDBUpdated");
+    NSLog(@"UPnPDBUpdated %d", [mDevices count]);
 }
 }}}
 
