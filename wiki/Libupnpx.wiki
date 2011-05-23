@@ -1,16 +1,37 @@
 #labels libupnpx.a
 == Build libupnpx.a  ==
 
-Before using the library you have to build the desired version. 
+Before using the library you have to build the upnpx static library *libupnpx.a* 
+ * open the desired project 
+   * example: ./upnpx/projects/iphone-xcode_3.n/upnpx
+ * select the scheme 
+   * example: "Simulator 3.2 | Debug
+ * Build
+   * The result is the upnpx static library: *libupnpx.a*
 
- * use XCode 4.n and open the project: *./upnpx/projects/ios/upnpx/upnpx.xcodeproj*
+----
 
-during this tutorial we will create a simple project for the iPhone Simulator, so you need to change the build scheme to "upnpx | iPhone n.n Simulator".
+== Use libupnpx in your own iPhone projects ==
+
+During the tutorial we use the project *./upnpx/projects/iphone-xcode_3.n/upnpxdemo* as example code.
+
+This is a "Navigation Based" application and in order to link libupnpx.a with it the following steps where done:
+
+*1. Create a navigation based application:*
+
+http://upnpx.googlecode.com/svn/wiki/images/navapp.png
  
 
- * Build the project:
+*2. Drag libupnpx.a to the frameworks folder of your project (do not choose copy when asked) *
 
-The result is the upnpx static library: *libupnpx.a*
+http://upnpx.googlecode.com/svn/wiki/images/draglibupnpx.png
 
 
- * If you built the iPhone Simulator Debug build, the library will be found at: *./upnpx/projects/ios/upnpx/build/Debug-iphonesimulator/libupnpx.a*
+*3. Set the libupnpx header include paths*
+
+http://upnpx.googlecode.com/svn/wiki/images/includepaths.png
+
+
+*4. Link against stdc++*
+
+http://upnpx.googlecode.com/svn/wiki/images/linkstdc.png
