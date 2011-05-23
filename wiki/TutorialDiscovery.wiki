@@ -6,29 +6,82 @@
 During Discovery we will search for any UPnP device on the local network. upnpx implements the ssdp protocol (Simple Device Discovery Protocol) and maintains an in memory database of all devices on the network, it  will automatically update this database when new devices are added or removed.
 Your code can read the database and get notifications when an update is done.
 
-In code:
+In code (see : project upnpxdemo)
 
 Get a pointer to the discovery database via the UPnPManager: 
 
 {{{
-#import "UPnPManager.h"
+//
+//  RootViewController.h
+//  upnpxdemo
+//
+//  Created by Bruno Keymolen on 22/05/11.
+//  Copyright Bruno Keymolen 2011. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
 #import "UPnPDB.h"
 
-UPnPDB* db = [[UPnPManager GetInstance] DB];
-[db addObserver:(UPnPDBObserver*)self];
-
-//
-// Interface UPnPDBObserver
-//
--(void)UPnPDBWillUpdate:(UPnPDB*)sender{
-
-}
--(void)UPnPDBUpdated:(UPnPDB*)sender{
-
+@interface RootViewController : UITableViewController <UPnPDBObserver>{
 }
 
+
+//protocol UPnPDBObserver
+-(void)UPnPDBWillUpdate:(UPnPDB*)sender;
+-(void)UPnPDBUpdated:(UPnPDB*)sender;
+
+
+@end
 }}}
 
+{{{
+//
+//  RootViewController.m
+//  upnpxdemo
+//
+//  Created by Bruno Keymolen on 22/05/11.
+//  Copyright Bruno Keymolen 2011. All rights reserved.
+//
+
+#import "RootViewController.h"
+
+#import "UPnPManager.h"
+
+
+@implementation RootViewController
+
+
+#pragma mark -
+#pragma mark View lifecycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    UPnPDB* db = [[UPnPManager GetInstance] DB];
+    [db addObserver:(UPnPDBObserver*)self];
+    
+    [[[UPnPManager GetInstance] SSDP] searchSSDP]; 	
+    
+    self.title = @"upnpx demo";
+}
+
+.....
+
+//protocol UPnPDBObserver
+-(void)UPnPDBWillUpdate:(UPnPDB*)sender{
+    NSLog(@"UPnPDBWillUpdate");
+}
+
+-(void)UPnPDBUpdated:(UPnPDB*)sender{
+    NSLog(@"UPnPDBUpdated");
+}
+
+
+}}}
 
 
 Next [TutorialDescription Step 2. Description]
