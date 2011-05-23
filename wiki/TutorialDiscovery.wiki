@@ -65,7 +65,9 @@ Basically, there are 3 steps to complete to implement SSDP:
 }}}
 
 
-The above code is all what is needed to search for UPnP devices on the Local Network and it will call the UPnPDBUpdated functions when such devices are found. There is little extra coding to be done in order to fill in an UITableView to display the found UPnP devices on the iPhone UI.
+The above code is all what is needed to search for UPnP devices on the Local Network. The NSArray mDevices contains a BasicUPnPDevice Instance per found device. The UPnPDBUpdated functions will be called whenever such devices are found or removed. 
+
+There is little extra coding to be done in order to fill in an UITableView to display the found UPnP devices on the iPhone UI. 
 
 Check the *upnpxdemo* project for the full implementation. 
 
