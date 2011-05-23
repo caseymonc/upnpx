@@ -1,18 +1,16 @@
 #labels upnpx,tutorial
 #sidebar TutorialIndex
 
-*<font color=red>! Todo: step 2 - 5 !</font>*
-
 Good UPnP documentation is available at at the website http://upnp.org.
 The architecture is described in the following document [http://upnp.org/specs/arch/UPnP-arch-DeviceArchitecture-v1.1.pdf UPNP Device Architecture Document]  
 
 A UPnP session exist of several stages: 
  * 0. Addressing
  * 1. Discovery 
- * 2. Description
- * 3. Control 
- * 4. Eventing
- * 5. Presentation
+ * _2. Description_
+ * _3. Control_ 
+ * _4. Eventing_
+ * _5. Presentation_
 
 upnpx is an implementation of the UPnP specification and has API functions for the different stages. This tutorial give simple examples how to use the upnpx API in order to build your own UPnP client. 
 
