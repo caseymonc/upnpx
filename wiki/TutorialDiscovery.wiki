@@ -62,4 +62,10 @@ In code (see : project upnpxdemo)
 }}}
 
 
+There is little extra code needed to fill in an UITableView to display all found UPnP devices on the local network.
+
+Check the *upnpxdemo* project for the full implementation. 
+
+http://upnpx.googlecode.com/svn/wiki/images/ssdpscreen.png
+
 Next [TutorialDescription Step 2. Description]
