@@ -6,7 +6,7 @@
 During Discovery we will search for any UPnP device on the local network. upnpx implements the ssdp protocol (Simple Device Discovery Protocol) and maintains an in memory database of all devices on the network, it  will automatically update this database when new devices are added or removed.
 Your code can read the database and get notifications when an update is done.
 
-The upnpx demo code contains a working ssdp example:
+Check the project "*./upnpx/projects/iphone-xcode_3.n/upnpxdemo/*" to see an example of a functional ssdp implementation:
 
 http://upnpx.googlecode.com/svn/wiki/images/ssdpscreen.png
 
