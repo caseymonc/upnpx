@@ -5,7 +5,7 @@
 
 Before using the library you have to build the upnpx static library *libupnpx.a* 
  * open the desired project 
-   * example: ./upnpx/projects/iphone-xcode_3.n/upnpx
+   * example: ./upnpx/projects/iphone-xcode_3.n/upnpx/upnpx.xcodeproj
  * select the scheme 
    * example: "Simulator 3.2 | Debug
  * Build
@@ -15,7 +15,7 @@ Before using the library you have to build the upnpx static library *libupnpx.a*
 
 == Use libupnpx in your own iPhone projects ==
 
-During the tutorial we use the project *./upnpx/projects/iphone-xcode_3.n/upnpxdemo* as example code.
+During the tutorial we use the project *./upnpx/projects/iphone-xcode_3.n/upnpxdemo/upnpxdemo.xcodeproj* as example code.
 
 This is a "Navigation Based" application and in order to link libupnpx.a with it the following steps where done:
 
