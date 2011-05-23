@@ -12,7 +12,7 @@ http://upnpx.googlecode.com/svn/wiki/images/ssdpscreen.png
 
 Basically, there are 3 steps to complete to implement SSDP:
 
-1. Implement the Interface *UPnPDBObserver*: 
+1. Implement the Interface [http://code.google.com/p/upnpx/source/browse/trunk/src/api/UPnPDB.h UPnPDBObserver]: 
 {{{
 //  RootViewController.h
 
@@ -29,7 +29,7 @@ Basically, there are 3 steps to complete to implement SSDP:
 }}}
 
 
-2. Get a pointer to the discovery database via the UPnPManager and call SSDP Search: 
+2. Get a pointer to the discovery database via the [http://code.google.com/p/upnpx/source/browse/trunk/src/api/UPnPManager.h UPnPManager] and call SSDP Search: 
 {{{
 //  RootViewController.m
 
@@ -52,7 +52,7 @@ Basically, there are 3 steps to complete to implement SSDP:
 }
 }}}
 
-3. Implement the UPnPDBObserver callback functions: 
+3. Implement the [http://code.google.com/p/upnpx/source/browse/trunk/src/api/UPnPDB.h UPnPDBObserver] callback functions: 
 {{{
 //protocol UPnPDBObserver
 -(void)UPnPDBWillUpdate:(UPnPDB*)sender{
