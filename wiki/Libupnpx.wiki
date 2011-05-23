@@ -1,4 +1,6 @@
 #labels libupnpx.a
+#sidebar TutorialIndex
+
 == Build libupnpx.a  ==
 
 Before using the library you have to build the upnpx static library *libupnpx.a* 
