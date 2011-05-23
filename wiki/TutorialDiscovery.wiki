@@ -8,8 +8,8 @@ Your code can read the database and get notifications when an update is done.
 
 In code (see : project upnpxdemo)
 
-Get a pointer to the discovery database via the UPnPManager: 
 
+1. Implement the Interface *UPnPDBObserver*: 
 {{{
 //
 //  RootViewController.h
@@ -35,6 +35,8 @@ Get a pointer to the discovery database via the UPnPManager:
 @end
 }}}
 
+
+2. Get a pointer to the discovery database via the UPnPManager and call SSDP Search: 
 {{{
 //
 //  RootViewController.m
@@ -68,9 +70,10 @@ Get a pointer to the discovery database via the UPnPManager:
     
     self.title = @"upnpx demo";
 }
+}}}
 
-.....
-
+3. Implement the UPnPDBObserver callback functions: 
+{{{
 //protocol UPnPDBObserver
 -(void)UPnPDBWillUpdate:(UPnPDB*)sender{
     NSLog(@"UPnPDBWillUpdate");
@@ -79,8 +82,6 @@ Get a pointer to the discovery database via the UPnPManager:
 -(void)UPnPDBUpdated:(UPnPDB*)sender{
     NSLog(@"UPnPDBUpdated");
 }
-
-
 }}}
 
 
