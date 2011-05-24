@@ -13,13 +13,13 @@ Check the Factory [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/D
 Since the UPnPDB only returns the device base class [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice] you need to implement a little logic to get access to the higher level device classes, the trick is to check the type and to cast the base class. See the following sample:
 
 {{{
-//We are interested in MediaServer1Devices
+//In this example we are interested in MediaServer1Devices
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     BasicUPnPDevice *device = [mDevices objectAtIndex:indexPath.row];
     if([[device urn] isEqualToString:@"urn:schemas-upnp-org:device:MediaServer:1"]){
         MediaServer1Device *server = (MediaServer1Device*)device;
-        //We are ready to call control-methods on the server
+        //We are ready to call control-methods on the server device
     }
 	
 }
