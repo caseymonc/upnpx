@@ -23,19 +23,8 @@ Since the UPnPDB only returns the device base class [http://code.google.com/p/up
     }
 	
 }
-
 }}}
 
-
-*Services*
-
-A device has services, these services are needed for the next step [TutorialControl Step 3. Control ], get access to the services in the following way:
-
-{{{
-server = (MediaServer1Device*)dev;
-
-
-}}}
-
+This step was quite easy, all you have to know it that upnpx give you instances of [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice] base classes and that you need to cast them to something useful in order to be ready for the next step. 
 
 Next [TutorialControl Step 3. Control ]
