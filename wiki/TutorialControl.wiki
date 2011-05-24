@@ -3,7 +3,7 @@
 
 == 3. Control ==
 
-_Through control, control points invoke actions on devices and poll for values._
+_"Through control, control points invoke actions on devices and poll for values."_
 
 This is an interesting phase since we actually will read and set device properties. Example for [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaServer1Device.h MediaServer] devices we will be able to query the media on the device in different ways, browse, search, get icons etc. And for example for [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaRenderer1Device.h MediaRenderers] we will have methods to play content, pause, change volume etc. 
 
