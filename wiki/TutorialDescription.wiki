@@ -8,7 +8,7 @@ From the Specifications: _"For the control point to learn more about the device 
 *upnpx* does the description step in the background so that integrators do not have to deal with it. 
 The [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice] pointers we get from the [http://code.google.com/p/upnpx/source/browse/trunk/src/api/UPnPDB.h UPnPDB] during the [http://code.google.com/p/upnpx/wiki/TutorialDiscovery discovery] already contains the device description and capabilities. upnpx did the necessary HTTP requests and parsed the Device and Service Description XML's for all 'known' Devices found during the SSDP Discovery. 
 
-Check the Factory [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/DeviceFactory.m DeviceFactory.m] for a list of current supported devices. This list can quite easily be extended with the help of an automated code generator which takes scdp XML from the standard descriptions as input.
+Check the Factory [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/DeviceFactory.m DeviceFactory.m] for a list of current supported devices. This list can quite easily be extended with the help of the automated code generator (scpdcodegenerator.xcodeproj) which takes scdp XML descriptions, from the UPnP standard, as input.
 
 Since the UPnPDB only returns the device base class [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice] you need to implement a little logic to get access to the higher level device classes, the trick is to check the type and to cast the base class. See the following sample:
 
