@@ -3,8 +3,8 @@
 
 == 0. Addressing ==
 
- According to the specifications : _"Through addressing, devices and control points get a network address"._
+ _{UPnP specifications} : "Through addressing, devices and control points get a network address"._
 
-Basically it means that your device have to get an IP address. Since the OS handles this task we are lucky and don't have to do much. Just be sure you actually are connected to the network and have an IP address before using upnpx.
+Basically this means that your device have to get an IP address. Since the OS handles this task we are lucky and don't have to do much. Just be sure you actually are connected to the network and have an IP address before using upnpx.
 
 Next [TutorialDiscovery Step 1. Discovery]
