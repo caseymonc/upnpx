@@ -1,7 +1,0 @@
-== Use libupnpx.a in your own project ==
-
- * Link against libupnpx.a
- * Include the upnpx API header files
-
-
-Example, my ‘hello world’ iPhone project
