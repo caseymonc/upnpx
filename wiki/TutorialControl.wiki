@@ -11,7 +11,7 @@ The exact capabilities for a device are defined by the UPnP Standard or by the v
 
 *Example: 'MediaServer1*
 
-A MediaServer-v1 device is defined in the following XML template: [http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf]
+A MediaServer-v1 device is defined in the following template: [http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf]
 
 In these specifications, under "Device Requirements" you will find 3 service types:
  * ContentDirectory:1.0
