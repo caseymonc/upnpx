@@ -6,7 +6,7 @@
 From the Specifications: _For the control point to learn more about the device and its capabilities, or to interact with the device, the control point MUST retrieve a *description* of the device and its capabilities from the URL provided by the device in the discovery message._
 
 *upnpx* does the description step in the background so that integrators do not have to deal with it. 
-The [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice] pointers we get from the [http://code.google.com/p/upnpx/source/browse/trunk/src/api/UPnPDB.h UPnPDB] during the [http://code.google.com/p/upnpx/wiki/TutorialDiscovery discovery] already contains the device description and capabilities. upnpx did the necessary HTTP request and parsed the Device and Service Description XML's for all 'known' Devices found during the SSDP Discovery. 
+The [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice] pointers we get from the [http://code.google.com/p/upnpx/source/browse/trunk/src/api/UPnPDB.h UPnPDB] during the [http://code.google.com/p/upnpx/wiki/TutorialDiscovery discovery] already contains the device description and capabilities. upnpx did the necessary HTTP requests and parsed the Device and Service Description XML's for all 'known' Devices found during the SSDP Discovery. 
 
 Check the Factory [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/DeviceFactory.m DeviceFactory.m] for a list of current supported devices. This list can quite easily be extended with the help of an automated code generator which takes scdp XML from the standard descriptions as input.
 
