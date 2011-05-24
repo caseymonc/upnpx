@@ -8,7 +8,7 @@ A UPnP session exist of several stages:
  * 0. Addressing
  * 1. Discovery 
  * 2. Description
- * _3. Control_ 
+ * 3. Control
  * _4. Eventing_
  * _5. Presentation_
 
