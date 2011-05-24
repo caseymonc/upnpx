@@ -9,7 +9,7 @@ This is an interesting phase since we actually will read and set device properti
 
 The exact capabilities for a device are defined in the UPnP Standard or by the vendor, upnpx provide an Objective-C interface for all specified service functions.
 
-*Example: MediaServer1*
+*Example: 'MediaServer1*
 
 A MediaServer-v1 device is defined in the following XML template: [http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf]
 
