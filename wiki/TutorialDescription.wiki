@@ -26,6 +26,6 @@ Since the UPnPDB only returns the device base class [http://code.google.com/p/up
 }}}
 [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaServer1Device.h MediaServer1Device]
 
-This step is in fact quite easy, all you have to know it that upnpx give you instances of Devices in the form of [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice] base classes and that you need to cast them to the actual device class in order to be ready for the next step. 
+This step is in fact quite easy, all you have to know it that upnpx give you instances of Devices, including description and capabilities, in the form of [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice] base classes and that you need to cast them to the actual device class in order to be ready for the next step. 
 
 Next [TutorialControl Step 3. Control ]
