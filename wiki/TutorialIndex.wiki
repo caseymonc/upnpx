@@ -1,6 +1,6 @@
  * [tutorial Tutorial Home]
 <br>
- * [Libupnpx Start. How to use libupnpx in an iPhone project]
+ * [Libupnpx How to use libupnpx in an iPhone project]
 <br>
  * [TutorialAddressing Step 0. Addressing]
  * [TutorialDiscovery Step 1. Discovery ]
