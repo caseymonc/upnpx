@@ -7,7 +7,7 @@ The architecture is described in the following document [http://upnp.org/specs/a
 A UPnP session exist of several stages: 
  * 0. Addressing
  * 1. Discovery 
- * _2. Description_
+ * 2. Description
  * _3. Control_ 
  * _4. Eventing_
  * _5. Presentation_
