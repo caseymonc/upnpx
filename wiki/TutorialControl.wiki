@@ -18,9 +18,9 @@ In these specifications, under "Device Requirements" you will find 3 service typ
  * ConnectionManager:1.0
  * AVTransport:1.0
 
-Take [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf ContentDirectory] service, if you look at the specifications at [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf] you will see that, among other stuff, a number of Actions are specified (2.7).
+Take the [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf ContentDirectory] service, if you look at the specifications at [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf] you will see that, among other stuff, a number of Actions are specified (2.7).
 
-Now, this are actions to control the device and they are all available as upnpx class methods via a class [http://code.google.com/p/upnpx/source/browse/trunk/src/api/SoapActionsContentDirectory1.h SoapActionsContentDirectory1]. 
+Now, this are actions to control the device and, for this example, they are all available as upnpx class methods via a class [http://code.google.com/p/upnpx/source/browse/trunk/src/api/SoapActionsContentDirectory1.h SoapActionsContentDirectory1]. 
 
 
 The following example demonstrates how to access the Services and Actions for a Device:
