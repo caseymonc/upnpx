@@ -3,7 +3,7 @@
 
 == 1. Discovery ==
 
- _"Through discovery, control points find interesting device(s)"_
+ _{UPnP specifications}: "Through discovery, control points find interesting device(s)"_
 
 During Discovery we will search for any UPnP device on the local network. upnpx implements the ssdp protocol (Simple Device Discovery Protocol) and maintains an in memory database of all devices on the network, it  will automatically update this database when new devices are added or removed.
 Your code can read the database and get notifications when an update is done.
