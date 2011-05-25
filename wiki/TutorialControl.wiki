@@ -12,7 +12,7 @@ The exact capabilities for a device are defined by the UPnP Standard or by the v
 
 *Example: !MediaServer1*
 
-This section demonstrates how to write a MediaServer control in order to browse its media data.
+This section demonstrates how to write a !MediaServer control in order to browse its media data.
 
 Screenshots from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo upnpxdemo.xcodeproj]
 
@@ -57,7 +57,7 @@ BasicUPnPDevice *device = [mDevices objectAtIndex:indexPath.row];
 -(SoapActionsContentDirectory1*)contentDirectory;
 }}}
 
-Use the one you need, in our case it is *[server contentDirectory]*
+Use the one you need, in our case it is {{{[server contentDirectory]}}}
 
 3. Call the desired Actions. All actions defined in [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf ContentDirectory:1.0] are available as Methods in the [http://code.google.com/p/upnpx/source/browse/trunk/src/api/SoapActionsContentDirectory1.h SoapActionsContentDirectory1] class.
 
