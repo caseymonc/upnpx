@@ -10,7 +10,7 @@ This is an interesting phase since we actually will read and set device properti
 The exact capabilities for a device are defined by the UPnP Standard or by the vendor, upnpx provide an Objective-C interface for all specified service functions. 
 <br><br> 
 
-*Example: 'MediaServer1*
+*Example: !MediaServer1*
 
 This section demonstrates how to write a MediaServer control in order to browse its media data.
 
@@ -33,26 +33,56 @@ For our example [http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf 
 <br><br>
 After examining the specifications you will see that the [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf ContentDirectory:1.0] service offers an Action, under *2.7.4. Browse*, to browse the data on a device.  
 
-The *Browse* action defines a set of input and output parameters, read the specifications to understand their meaning. upnpx implements the *Browse* action  (as well as all other Actions) with the exact same parameters.
+The *Browse* action defines a set of input and output parameters, read the specifications to understand their meaning. upnpx implements the *Browse* action  (as well as all other Actions) with the exact same parameters, the usage of the parameters is defined by the specifications.
 
 <br><br>
 Now we decided we need access to the *Browse* Action, we need to know how to achieve this in upnpx. Well, like the other things, it is not too difficult, call it easy.
 
-
-
-Take the [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf ContentDirectory] service, if you look at the specifications at [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf] you will see that, among other stuff, a number of Actions are specified (2.7).
-
-Now, this are actions to control the device and, for this example, they are all available as upnpx class methods via a class [http://code.google.com/p/upnpx/source/browse/trunk/src/api/SoapActionsContentDirectory1.h SoapActionsContentDirectory1]. 
-
-
-The following example demonstrates how to access the Services and Actions for a Device:
+1. First you need the [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaServer1Device.h MediaServer1Device] pointer you got from [TutorialDescription Step 2. Description].
 
 {{{
-    MediaServer1Device *m_device;
-    NSMutableArray *m_playList; //
+...
+BasicUPnPDevice *device = [mDevices objectAtIndex:indexPath.row];
+    if([[device urn] isEqualToString:@"urn:schemas-upnp-org:device:MediaServer:1"]){
+        MediaServer1Device *server = (MediaServer1Device*)device;
+        //We are ready to call control-methods on the server device
+    }
+...
+}}}
+
+2. The [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaServer1Device.h MediaServer1Device] defines 3 properties to access the Services. 
+{{{
+-(SoapActionsAVTransport1*)avTransport;
+-(SoapActionsConnectionManager1*)connectionManager;
+-(SoapActionsContentDirectory1*)contentDirectory;
+}}}
+
+Use the one you need, in our case it is *[server contentDirectory]*
+
+3. Call the desired Actions. All actions defined in [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf ContentDirectory:1.0] are available as Methods in the [http://code.google.com/p/upnpx/source/browse/trunk/src/api/SoapActionsContentDirectory1.h SoapActionsContentDirectory1] class.
+
+This is an example from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo upnpxdemo.xcodeproj] that demonstrates how to handle the input and output parameters (it is done via NSMutableString objects):
+{{{
+    //Allocate NMSutableString's to read the results
+    NSMutableString *outResult = [[NSMutableString alloc] init];
+    NSMutableString *outNumberReturned = [[NSMutableString alloc] init];
+    NSMutableString *outTotalMatches = [[NSMutableString alloc] init];
+    NSMutableString *outUpdateID = [[NSMutableString alloc] init];
+    
+    [[m_device contentDirectory] BrowseWithObjectID:m_rootId BrowseFlag:@"BrowseDirectChildren" Filter:@"*" StartingIndex:@"0" RequestedCount:@"0" SortCriteria:@"+dc:title" OutResult:outResult OutNumberReturned:outNumberReturned OutTotalMatches:outTotalMatches OutUpdateID:outUpdateID];  
+        
+    ... <snip>...
+
+    [outResult release];
+    [outNumberReturned release];
+    [outTotalMatches release];
+    [outUpdateID release];
 }}}
 
 
+All Actions for all services work in a similar way. Mostly it is enough to call them with the right parameters (check the specs for that) and the device will act on your commands.
+
+For this demo, the *Browse* Action returns a somewhat complicated result in *outResult* in thje form of  DIDL Xml. upnpx has some helper code to parse that result into an array of readable data, see the full 
 {{{
     //Allocate NMSutableString's to read the results
     NSMutableString *outResult = [[NSMutableString alloc] init];
@@ -79,14 +109,5 @@ The following example demonstrates how to access the Services and Actions for a 
 }}}
 
 
-{{{
-    MediaServer1BasicObject *item = [m_playList objectAtIndex:indexPath.row];
-    if([item isContainer]){
-        MediaServer1ContainerObject *container = [m_playList objectAtIndex:indexPath.row];
-        FolderView *targetViewController = [[[FolderView alloc] initWithMediaDevice:m_device andHeader:[container title] andRootId:[container objectID]] autorelease];
-        [[self navigationController] pushViewController:targetViewController animated:YES];
-    }
-
-}}}
 
 Next [TutorialEventing Step 4. Eventing]
