@@ -36,7 +36,7 @@ After examining the specifications you will see that the [http://www.upnp.org/sp
 The *Browse* action defines a set of input and output parameters, read the specifications to understand their meaning. upnpx implements the *Browse* action  (as well as all other Actions) with the exact same parameters, the usage of the parameters is defined by the specifications.
 
 <br><br>
-Now we decided we need access to the *Browse* Action, we need to know how to achieve this in upnpx. Well, like the other things, it is not too difficult, call it easy.
+Now we decided we need access to the *Browse* Action, we need to find out how to achieve this in upnpx. Well, like the other things, it is not too difficult, call it easy.
 
 1. First you need the [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaServer1Device.h MediaServer1Device] pointer you got from [TutorialDescription Step 2. Description].
 
