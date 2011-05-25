@@ -66,7 +66,7 @@ In our case we want to use the, somewhat complexer, *BrowseWithObjectID* Action.
 -(int)BrowseWithObjectID:(NSString*)objectid BrowseFlag:(NSString*)browseflag Filter:(NSString*)filter StartingIndex:(NSString*)startingindex RequestedCount:(NSString*)requestedcount SortCriteria:(NSString*)sortcriteria OutResult:(NSMutableString*)result OutNumberReturned:(NSMutableString*)numberreturned OutTotalMatches:(NSMutableString*)totalmatches OutUpdateID:(NSMutableString*)updateid;
 }}}
 
-This is an example from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo upnpxdemo.xcodeproj] that demonstrates how to handle the input and output parameters (it is done via NSMutableString objects):
+This is an example from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo upnpxdemo.xcodeproj] that demonstrates how to handle the input and output parameters (the output parameters need to be of the type NSMutableString, when the function returns they contain the requested data):
 {{{
     //Allocate NMSutableString's to read the results
     NSMutableString *outResult = [[NSMutableString alloc] init];
