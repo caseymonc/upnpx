@@ -7,7 +7,7 @@
 
 This is an interesting step since we actually will read and set device properties. Example for [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaServer1Device.h MediaServer] devices we will be able to query the media on the device in different ways, browse, search, get icons etc. And for example for [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaRenderer1Device.h MediaRenderers] we will have methods to play content, pause, change volume etc. 
 
-The exact capabilities for a device are defined by the UPnP Standard or by the vendor, upnpx provide an Objective-C interface for all specified service functions. 
+The exact capabilities for a device are defined by the UPnP Standard or by the vendor, upnpx provide an Objective-C interface for such specified service functions. 
 <br><br> 
 
 *Example: !MediaServer1*
