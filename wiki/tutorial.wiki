@@ -9,8 +9,8 @@ A UPnP session exist of several steps:
  * 1. Discovery 
  * 2. Description
  * 3. Control
- * _4. Eventing_
- * _5. Presentation_
+ * 4. Eventing
+ * 5. Presentation
 
 upnpx is an implementation of the UPnP specification and has API functions for the different steps. This tutorial give simple examples how to use the upnpx API in order to build your own UPnP client. 
 
