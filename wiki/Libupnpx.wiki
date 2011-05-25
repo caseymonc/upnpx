@@ -1,18 +1,6 @@
 #labels libupnpx.a
 #sidebar TutorialIndex
 
-== Build libupnpx.a  ==
-
-Before using the library you have to build the upnpx static library *libupnpx.a* 
- * open the desired project 
-   * example: ./upnpx/projects/iphone-xcode_3.n/upnpx/upnpx.xcodeproj
- * select the scheme 
-   * example: "Simulator 3.2 | Debug
- * Build
-   * The result is the upnpx static library: *libupnpx.a*
-
-----
-
 == Use libupnpx in your own iPhone projects ==
 
 During the tutorial we use the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo ./upnpx/projects/iphone-xcode_3.n/upnpxdemo/upnpxdemo.xcodeproj] as example code.
