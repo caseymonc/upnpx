@@ -89,6 +89,9 @@ All Actions for all services work in a similar way. Mostly it is enough to call 
 
 For this demo, the *Browse* Action returns a somewhat complicated result in *outResult* in the form of  DIDL Xml. upnpx has some helper code to parse that DIDL result into an array with usable objects: 
 {{{
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
     //Allocate NMSutableString's to read the results
     NSMutableString *outResult = [[NSMutableString alloc] init];
     NSMutableString *outNumberReturned = [[NSMutableString alloc] init];
@@ -98,19 +101,30 @@ For this demo, the *Browse* Action returns a somewhat complicated result in *out
     [[m_device contentDirectory] BrowseWithObjectID:m_rootId BrowseFlag:@"BrowseDirectChildren" Filter:@"*" StartingIndex:@"0" RequestedCount:@"0" SortCriteria:@"+dc:title" OutResult:outResult OutNumberReturned:outNumberReturned OutTotalMatches:outTotalMatches OutUpdateID:outUpdateID];  
         
     //The collections are returned as DIDL Xml in the string 'outResult'
-    //upnpx provide a helper class to parse the DIDL Xml in usable MediaServer1BasicObject object
-    //(MediaServer1ContainerObject and MediaServer1ItemObject)
-    //Parse the return DIDL and store all entries as objects in the 'mediaObjects' array
+    //upnpx provide a helper class to parse the DIDL Xml in an Array of usable MediaServer1BasicObject objects
     [m_playList removeAllObjects];
     NSData *didl = [outResult dataUsingEncoding:NSUTF8StringEncoding]; 
     MediaServerBasicObjectParser *parser = [[MediaServerBasicObjectParser alloc] initWithMediaObjectArray:m_playList itemsOnly:NO];
     [parser parseFromData:didl];
     [parser release];
+    //Playlist contains a collection of usable MediaServer1BasicObject's now. 
+    //Check the type and cast them to MediaServer1ContainerObject or MediaServer1ItemObject to have full access to the information
+    //Example:
+    //MediaServer1BasicObject *item = [m_playList objectAtIndex:0];
+    //if([[m_playList objectAtIndex:0] isContainer]){
+    //  MediaServer1ContainerObject *container = (MediaServer1ContainerObject*)[m_playList objectAtIndex:0];
+    //}else{
+    //  MediaServer1ItemObject *item = (MediaServer1ItemObject*)[m_playList objectAtIndex:0];
+    //}
+        
     
     [outResult release];
     [outNumberReturned release];
     [outTotalMatches release];
     [outUpdateID release];
+    
+    self.title = m_title;
+}
 }}}
 
 
