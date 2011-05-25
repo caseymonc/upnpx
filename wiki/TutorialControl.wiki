@@ -7,16 +7,38 @@
 
 This is an interesting phase since we actually will read and set device properties. Example for [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaServer1Device.h MediaServer] devices we will be able to query the media on the device in different ways, browse, search, get icons etc. And for example for [http://code.google.com/p/upnpx/source/browse/trunk/src/api/MediaRenderer1Device.h MediaRenderers] we will have methods to play content, pause, change volume etc. 
 
-The exact capabilities for a device are defined by the UPnP Standard or by the vendor, upnpx provide an Objective-C interface for all specified service functions.
+The exact capabilities for a device are defined by the UPnP Standard or by the vendor, upnpx provide an Objective-C interface for all specified service functions. 
+<br><br> 
 
 *Example: 'MediaServer1*
 
-A MediaServer-v1 device is defined in the following template: [http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf]
+This section demonstrates how to write a MediaServer control in order to browse its media data.
 
-In these specifications, under "Device Requirements" you will find 3 service types:
- * !ContentDirectory:1.0
- * ConnectionManager:1.0
- * AVTransport:1.0
+Screenshots from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo upnpxdemo.xcodeproj]
+
+http://upnpx.googlecode.com/svn/wiki/images/demo_screen_1.png
+http://upnpx.googlecode.com/svn/wiki/images/demo_screen_3.png
+
+
+<br><br>
+The first thing to do is to take look at the !MediaServer-v1 device specifications, these are defined in the following template: [http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf]
+
+UPnP devices expose Actions and Events through services, so you need to find and choose the desired Service Type that offers the functionality you want to achieve.
+
+For our example [http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf MediaServer:1] the supported Service Types are listed under "2.2 Device Requirements":
+ * [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf ContentDirectory:1.0]
+ * [http://www.upnp.org/specs/av/UPnP-av-ConnectionManager-v1-Service.pdf ConnectionManager:1.0]
+ * [http://www.upnp.org/specs/av/UPnP-av-AVTransport-v1-Service.pdf AVTransport:1.0]
+
+<br><br>
+After examining the specifications you will see that the [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf ContentDirectory:1.0] service offers an Action, under *2.7.4. Browse*, to browse the data on a device.  
+
+The *Browse* action defines a set of input and output parameters, read the specifications to understand their meaning. upnpx implements the *Browse* action  (as well as all other Actions) with the exact same parameters.
+
+<br><br>
+Now we decided we need access to the *Browse* Action, we need to know how to achieve this in upnpx. Well, like the other things, it is not too difficult, call it easy.
+
+
 
 Take the [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf ContentDirectory] service, if you look at the specifications at [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf] you will see that, among other stuff, a number of Actions are specified (2.7).
 
