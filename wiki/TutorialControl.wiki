@@ -87,7 +87,7 @@ This is an example from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftru
 
 All Actions for all services work in a similar way. Mostly it is enough to call them with the right parameters (check the specs for that) and the device will act on your commands.
 
-For this demo, the *Browse* Action returns a somewhat complicated result in *outResult* in thje form of  DIDL Xml. upnpx has some helper code to parse that result into an array of readable data, see the full 
+For this demo, the *Browse* Action returns a somewhat complicated result in *outResult* in the form of  DIDL Xml. upnpx has some helper code to parse that DIDL result into an array with usable objects: 
 {{{
     //Allocate NMSutableString's to read the results
     NSMutableString *outResult = [[NSMutableString alloc] init];
