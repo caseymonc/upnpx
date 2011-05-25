@@ -25,7 +25,7 @@ The first thing to do is to take look at the !MediaServer-v1 device specificatio
 
 UPnP devices expose Actions and Events through services, so you need to find and choose the desired Service Type that offers the functionality you want to achieve.
 
-For our example [http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf MediaServer:1] the supported Service Types are listed under "2.2 Device Requirements":
+For our example [http://www.upnp.org/specs/av/UPnP-av-MediaServer-v1-Device.pdf MediaServer:1] the supported Service Types are listed under "2.2 Device Model":
 || !ContentDirectory:1.0 || [http://www.upnp.org/specs/av/UPnP-av-ContentDirectory-v1-Service.pdf  UPnP-av-ContentDirectory-v1-Service.pdf] || 
 || !ConnectionManager:1.0 || [http://www.upnp.org/specs/av/UPnP-av-ConnectionManager-v1-Service.pdf UPnP-av-ConnectionManager-v1-Service.pdf] ||
 || AVTransport:1.0 || [http://www.upnp.org/specs/av/UPnP-av-AVTransport-v1-Service.pdf UPnP-av-AVTransport-v1-Service.pdf] ||
