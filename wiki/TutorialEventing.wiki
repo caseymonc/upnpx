@@ -3,4 +3,7 @@
 
 == 4. Eventing ==
 
+ _{UPnP specifications: "Through eventing, control points listen to state changes in device(s)."}_
+
+<br><br>
 Next [TutorialPresentation Step 5. Presentation]
