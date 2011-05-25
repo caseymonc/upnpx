@@ -33,7 +33,7 @@ http://upnpx.googlecode.com/svn/wiki/images/linkstdc.png
 
 <br><br>
 
-*5. Select a compatible scheme as the one used while building the libupnpx.a library*
+*5. Select a compatible scheme with the one used while building the libupnpx.a library*
    * example: "Simulator 3.2 | Debug
 
 http://upnpx.googlecode.com/svn/wiki/images/scheme.png
