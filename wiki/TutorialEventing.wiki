@@ -5,5 +5,12 @@
 
  _{UPnP specifications: "Through eventing, control points listen to state changes in device(s)."}_
 
+[http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPService.h BasicUPnPService.h]
+{{{
+@protocol BasicUPnPServiceObserver
+-(void)UPnPEvent:(BasicUPnPService*)sender events:(NSDictionary*)events;
+@end
+}}}
+
 <br><br>
 Next [TutorialPresentation Step 5. Presentation]
