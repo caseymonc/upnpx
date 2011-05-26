@@ -6,7 +6,7 @@
  _{UPnP specifications: "Through eventing, control points listen to state changes in device(s)."}_
 
 
-1. Implement the Interface : [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPService.h BasicUPnPService.h]
+1. Implement the Interface : BasicUPnPServiceObserver, declared in  [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPService.h BasicUPnPService.h] 
 {{{
 @protocol BasicUPnPServiceObserver
 -(void)UPnPEvent:(BasicUPnPService*)sender events:(NSDictionary*)events;
