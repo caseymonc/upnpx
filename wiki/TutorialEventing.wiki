@@ -14,14 +14,14 @@
 }}}
 
 [http://www.upnp.org/specs/av/UPnP-av-AVTransport-v1-Service.pdf UPnP-av-AVTransport-v1-Service.pdf] 
-
+<br><br>
 2. Register your Class as an Observer (be sure to do this only once)
 {{{
 if([[self avTransportService] isObserver:(BasicUPnPServiceObserver*)self] == NO){
 	[[self avTransportService] addObserver:(BasicUPnPServiceObserver*)self]; //Lazy observer attach
 }
 }}}
-
+<br><br>
 3. Receive the events
 {{{
 //BasicUPnPServiceObserver
