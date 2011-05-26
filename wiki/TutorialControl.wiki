@@ -68,7 +68,7 @@ In our case we want to use the, somewhat complexer, *BrowseWithObjectID* Action.
 
 This is an example from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo upnpxdemo.xcodeproj] that demonstrates how to handle the input and output parameters (the output parameters need to be of the type NSMutableString, when the function returns they contain the requested data):
 {{{
-    //Allocate NMSutableString's to read the results
+    //Allocate NSMutableString's to read the results
     NSMutableString *outResult = [[NSMutableString alloc] init];
     NSMutableString *outNumberReturned = [[NSMutableString alloc] init];
     NSMutableString *outTotalMatches = [[NSMutableString alloc] init];
@@ -88,11 +88,20 @@ This is an example from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftru
 All Actions for all services work in a similar way. Mostly it is enough to call them with the right parameters (check the specs for that) and the device will act on your commands.
 
 For this demo, the *Browse* Action returns a somewhat complicated result in *outResult* in the form of  DIDL Xml. upnpx has some helper code to parse that DIDL result into an array with usable objects: 
+
+[http://code.google.com/p/upnpx/source/browse/trunk/projects/iphone-xcode_3.n/upnpxdemo/FolderView.h FolderView.h]:
+{{{
+@interface FolderView : UITableViewController {
+    ...
+    NSMutableArray *m_playList; 
+}
+}}}
+[http://code.google.com/p/upnpx/source/browse/trunk/projects/iphone-xcode_3.n/upnpxdemo/FolderView.m FolderView.m]:
 {{{
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    //Allocate NMSutableString's to read the results
+    //Allocate NSMutableString's to read the results
     NSMutableString *outResult = [[NSMutableString alloc] init];
     NSMutableString *outNumberReturned = [[NSMutableString alloc] init];
     NSMutableString *outTotalMatches = [[NSMutableString alloc] init];
@@ -110,11 +119,12 @@ For this demo, the *Browse* Action returns a somewhat complicated result in *out
     //Playlist contains a collection of usable MediaServer1BasicObject's now. 
     //Check the type and cast them to MediaServer1ContainerObject or MediaServer1ItemObject to have full access to the information
     //Example:
-    //MediaServer1BasicObject *item = [m_playList objectAtIndex:0];
     //if([[m_playList objectAtIndex:0] isContainer]){
     //  MediaServer1ContainerObject *container = (MediaServer1ContainerObject*)[m_playList objectAtIndex:0];
+    //  ...do something useful with the container
     //}else{
     //  MediaServer1ItemObject *item = (MediaServer1ItemObject*)[m_playList objectAtIndex:0];
+    //  ...do something useful with the item
     //}
         
     
