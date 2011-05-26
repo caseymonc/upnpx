@@ -6,7 +6,7 @@ Before using the library you have to build the upnpx static library *libupnpx.a*
  
 
 *1. open the desired project with Xcode*
- * for xcode 3.n, use: ./upnpx/projects/iphone-xcode_3.n/upnpx/upnpx.xcodeproj 
+ * for xcode 3.n, use: [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpx ./upnpx/projects/iphone-xcode_3.n/upnpx/upnpx.xcodeproj]
 
 http://upnpx.googlecode.com/svn/wiki/images/locate_project.png
 
