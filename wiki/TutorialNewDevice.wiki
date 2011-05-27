@@ -1,5 +1,7 @@
 = Add a new device to the upnpx stack =
 
+*Example, add the "DigitalSecurityCamera" device:*
+
 http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
 
  * http://www.upnp.org/specs/ha/UPnP-ha-StillImage-v1-Service.pdf
@@ -47,4 +49,3 @@ Write the code for those 2 files. The most convenient way is to copy/paste the c
 Check the service types
 2.1. ServiceType 
 urn:schemasupnp-org:service: DigitalSecurityCameraSettings:1.  
-
