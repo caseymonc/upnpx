@@ -1,8 +1,8 @@
 = Add a new device to the upnpx stack =
 
-*Example, add the "DigitalSecurityCamera" device:*
+*Example, add the "!DigitalSecurityCamera" device:*
 
-1. Locate the Services used by the Device:
+1. Check the specifications and Locate the Services used by the Device:
 http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
 
  * http://www.upnp.org/specs/ha/UPnP-ha-StillImage-v1-Service.pdf
