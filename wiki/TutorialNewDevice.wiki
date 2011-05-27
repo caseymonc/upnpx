@@ -1,3 +1,5 @@
+#sidebar TutorialIndex
+
 = Add a new device to the upnpx stack =
 
 *Example, add the "!DigitalSecurityCamera" device:*
