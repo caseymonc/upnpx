@@ -2,24 +2,27 @@
 
 *Example, add the "DigitalSecurityCamera" device:*
 
+1. Locate the Services used by the Device:
 http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
 
  * http://www.upnp.org/specs/ha/UPnP-ha-StillImage-v1-Service.pdf
  * http://upnp.org/specs/ha/UPnP-ha-Settings-v1-Service.pdf
  * http://www.upnp.org/specs/ha/UPnP-ha-MotionImage-v1-Service.pdf
 
-Get the Service descriptions in section *3.  XML Service Description* and save them in XML files
+2. For all Services; get the Service descriptions in section *3.  XML Service Description* and save them in XML files
 
+
+3. Use [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fscpdcodegenerator%2Fscpdcodegenerator.xcodeproj scpdcodegenerator] to create the Service Classes with the Soap Actions:
 
 {{{
 ./scpdcodegenerator DigitalSecurityCameraStillImage1.xml DigitalSecurityCameraStillImage1
 ./scpdcodegenerator DigitalSecurityCameraSettings1.xml DigitalSecurityCameraSettings1
-./scpdcodegenerator DigitalSecurityCameraMotionImage1.xml DigitalSecurityCameraMotionImage1.xml 
+./scpdcodegenerator DigitalSecurityCameraMotionImage1.xml DigitalSecurityCameraMotionImage1 
 
 
 iMac:upnpx bruno$ ls -al *.m *.h
--rw-r--r--@ 1 bruno  staff   2189 May 26 23:37 SoapActionsDigitalSecurityCameraMotionImage1.xml.h
--rw-r--r--@ 1 bruno  staff  11774 May 26 23:37 SoapActionsDigitalSecurityCameraMotionImage1.xml.m
+-rw-r--r--@ 1 bruno  staff   2189 May 26 23:37 SoapActionsDigitalSecurityCameraMotionImage1.h
+-rw-r--r--@ 1 bruno  staff  11774 May 26 23:37 SoapActionsDigitalSecurityCameraMotionImage1.m
 -rw-r--r--@ 1 bruno  staff   1334 May 26 23:33 SoapActionsDigitalSecurityCameraSettings1.h
 -rw-r--r--@ 1 bruno  staff   7784 May 26 23:33 SoapActionsDigitalSecurityCameraSettings1.m
 -rw-r--r--@ 1 bruno  staff   1682 May 26 23:31 SoapActionsDigitalSecurityCameraStillImage1.h
@@ -28,16 +31,14 @@ iMac:upnpx bruno$
 }}}
 
 
-Copy the header-files to the API:
-./upnpx/src/api/
+4. Put the Generated files in the upnpx project:
+ * Copy the header-files to the API:
+   * ./upnpx/src/api/
+ * Copy the definition files (.m) to the upnp folder:
+   * ./upnpx/src/upnp/
+ * Add the files to the upnpx project.
 
-Copy the definition files (.m) to the upnp folder:
-./upnpx/src/upnp/
-
-
-Add the files to the upnpx project.
-
-Create the following files:
+5. Create the following files:
  * ./upnpx/src/api/DigitalSecurityCamera1Device.h
  * ./upnpx/src/upnp/DigitalSecurityCamera1Device.m
 
@@ -46,6 +47,10 @@ And add them to the upnpx project.
 Write the code for those 2 files. The most convenient way is to copy/paste the code of MediaServer1Device and change the services with the ones that belong to your new device (the ones you just created)
 
 
-Check the service types
-2.1. ServiceType 
-urn:schemasupnp-org:service: DigitalSecurityCameraSettings:1.  
+6. Add the new device to the Device Factory
+ * Check the service types int *2.1. ServiceType*
+
+For our example it is:
+urn:schemasupnp-org:service: DigitalSecurityCameraSettings:1
+
+ * Add the Device to the [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/DeviceFactory.m Device Factory]
