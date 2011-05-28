@@ -14,7 +14,7 @@ The exact capabilities for a device are defined by the UPnP Standard or by the v
 
 This section demonstrates how to write a !MediaServer control in order to browse its media data.
 
-Screenshots from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo upnpxdemo.xcodeproj]
+Screenshots from [http://code.google.com/p/upnpx/source/browse/trunk/projects/#projects%2Fxcode3%2Fupnpxdemo upnpxdemo.xcodeproj]
 
 http://upnpx.googlecode.com/svn/wiki/images/demo_screen_1.png
 http://upnpx.googlecode.com/svn/wiki/images/demo_screen_3.png
@@ -66,7 +66,7 @@ In our case we want to use the, somewhat complexer, *BrowseWithObjectID* Action.
 -(int)BrowseWithObjectID:(NSString*)objectid BrowseFlag:(NSString*)browseflag Filter:(NSString*)filter StartingIndex:(NSString*)startingindex RequestedCount:(NSString*)requestedcount SortCriteria:(NSString*)sortcriteria OutResult:(NSMutableString*)result OutNumberReturned:(NSMutableString*)numberreturned OutTotalMatches:(NSMutableString*)totalmatches OutUpdateID:(NSMutableString*)updateid;
 }}}
 
-This is an example from [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo upnpxdemo.xcodeproj] that demonstrates how to handle the input and output parameters (the output parameters need to be of the type NSMutableString, when the function returns they contain the requested data):
+This is an example from [http://code.google.com/p/upnpx/source/browse/trunk/projects/#projects%2Fxcode3%2Fupnpxdemo upnpxdemo.xcodeproj] that demonstrates how to handle the input and output parameters (the output parameters need to be of the type NSMutableString, when the function returns they contain the requested data):
 {{{
     //Allocate NSMutableString's to read the results
     NSMutableString *outResult = [[NSMutableString alloc] init];
@@ -89,14 +89,14 @@ All Actions for all services work in a similar way. Mostly it is enough to call 
 
 For this demo, the *Browse* Action returns a somewhat complicated result in *outResult* in the form of  DIDL Xml. upnpx has some helper code to parse that DIDL result into an array with usable objects: 
 
-[http://code.google.com/p/upnpx/source/browse/trunk/projects/iphone-xcode_3.n/upnpxdemo/FolderView.h FolderView.h]:
+[http://code.google.com/p/upnpx/source/browse/trunk/projects/xcode3/upnpxdemo/FolderView.h FolderView.h]:
 {{{
 @interface FolderView : UITableViewController {
     ...
     NSMutableArray *m_playList; 
 }
 }}}
-[http://code.google.com/p/upnpx/source/browse/trunk/projects/iphone-xcode_3.n/upnpxdemo/FolderView.m FolderView.m]:
+[http://code.google.com/p/upnpx/source/browse/trunk/projects/xcode3/upnpxdemo/FolderView.m FolderView.m]:
 {{{
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -138,7 +138,7 @@ For this demo, the *Browse* Action returns a somewhat complicated result in *out
 }}}
 
 
-Check the [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo upnpxdemo] project, and especially the [http://code.google.com/p/upnpx/source/browse/trunk/projects/iphone-xcode_3.n/upnpxdemo/FolderView.m FolderView.m], for the full implementation. 
+Check the [http://code.google.com/p/upnpx/source/browse/trunk/projects/#projects%2Fxcode3%2Fupnpxdemo upnpxdemo] project, and especially the [http://code.google.com/p/upnpx/source/browse/trunk/projects/xcode3/upnpxdemo/FolderView.m FolderView.m], for the full implementation. 
 
 
 Next [TutorialEventing Step 4. Eventing]
