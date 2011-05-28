@@ -17,6 +17,7 @@ The following section explains the steps to add a new device.
 1. Check the specifications and Locate the Services used by the Device:
 http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
 
+From the specifications we learn that the DigitalSecurityCamera:1 has the following services:
  * http://www.upnp.org/specs/ha/UPnP-ha-StillImage-v1-Service.pdf
  * http://upnp.org/specs/ha/UPnP-ha-Settings-v1-Service.pdf
  * http://www.upnp.org/specs/ha/UPnP-ha-MotionImage-v1-Service.pdf
