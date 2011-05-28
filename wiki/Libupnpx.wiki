@@ -17,7 +17,7 @@ Basically, the same steps have to be done:
 
 Check the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fxcode4%2Fupnpxdemo.xcworkspace upnpxdemo.xcworkspace] for an Xcode 4 project example.
 
-Appart from the Initial project setup, there are no difference using the upnpx stack between Xcode 3 and Xcode 4 projects or iPhone, iPad, iOS and Mac OS X targets. All examples should work in all environments and for all targets.
+Appart from the Initial project setup, there are no differences using the upnpx stack API between Xcode 3 and Xcode 4 projects or iPhone, iPad, iOS and Mac OS X targets. All examples should work in all environments and/or for all targets.
 
 <br>
 
