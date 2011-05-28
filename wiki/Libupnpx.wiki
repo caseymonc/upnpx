@@ -7,7 +7,7 @@
 
 This page demonstrates how to add the library libupnp.a into an *Xcode 3* project. Including libraries is somewhat changed in *Xcode 4*, refer to online documentation like [http://blog.carbonfive.com/2011/04/04/using-open-source-static-libraries-in-xcode-4 using-open-source-static-libraries-in-xcode-4] to find the necessary information.
 
-Basically, the same steps have to be done, build upnpx, set the header paths to the API and link the libupnpx.a into your project. 
+Basically, the same steps have to be done, build upnpx, set the header paths to the API, link against the C++ Standard Libraries (stdcc++) and link the libupnpx.a into your project. 
 
 <br>
 
