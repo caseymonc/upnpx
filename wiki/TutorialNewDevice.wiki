@@ -78,10 +78,7 @@ Example:
 <br>
 
 6. Add the new device to the Device Factory
- * Check the device urn *
-
-For our example, you find it in the device template specifications under *2.1. Device Type*:
-urn:schemas-upnp-org:device:!DigitalSecurityCamera:1
+ * Check the device urn; for our example, you find it in the device template specifications under *2.1. Device Type*: urn:schemas-upnp-org:device:!DigitalSecurityCamera:1
 
  * Add the Device to the [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/DeviceFactory.m Device Factory]
 
