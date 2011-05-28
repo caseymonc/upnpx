@@ -3,6 +3,8 @@
 
 == Use libupnpx in your own iPhone projects ==
 
+*This page demonstrates how to add the library libupnp.a into an Xcode 3.n project.*
+
 During the tutorial we use the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo ./upnpx/projects/iphone-xcode_3.n/upnpxdemo/upnpxdemo.xcodeproj] as example code.
 
 This is a "Navigation Based" application and in order to link libupnpx.a with it the following steps where done:
