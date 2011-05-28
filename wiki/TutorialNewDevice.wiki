@@ -4,6 +4,8 @@
 
 *Example, add the "!DigitalSecurityCamera" device:*
 
+<br>
+
 1. Check the specifications and Locate the Services used by the Device:
 http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
 
@@ -13,6 +15,7 @@ http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
 
 2. For all Services; get the Service descriptions in section *3.  XML Service Description* and save them in XML files
 
+<br>
 
 3. Use [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fscpdcodegenerator%2Fscpdcodegenerator.xcodeproj scpdcodegenerator] to create the Service Classes with the Soap Actions:
 
@@ -32,6 +35,7 @@ iMac:upnpx bruno$ ls -al *.m *.h
 iMac:upnpx bruno$ 
 }}}
 
+<br>
 
 4. Put the Generated files in the upnpx project:
  * Copy the header-files to the API:
@@ -39,6 +43,8 @@ iMac:upnpx bruno$
  * Copy the definition files (.m) to the upnp folder:
    * ./upnpx/src/upnp/
  * Add the files to the upnpx project.
+
+<br>
 
 5. Create the following files:
  * ./upnpx/src/api/!DigitalSecurityCamera1Device.h
@@ -48,6 +54,11 @@ And add them to the upnpx project.
 
 Write the code for those 2 files. The most convenient way is to copy/paste the code of MediaServer1Device and change the services with the ones that belong to your new device (the ones you just created)
 
+Example:
+ * [[http://code.google.com/p/upnpx/source/browse/trunk/src/api/DigitalSecurityCamera1Device.h DigitalSecurityCamera1Device.h]
+ * [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/DigitalSecurityCamera1Device.m DigitalSecurityCamera1Device.m]
+
+<br>
 
 6. Add the new device to the Device Factory
  * Check the service types int *2.1. !ServiceType*
@@ -65,3 +76,8 @@ urn:schemasupnp-org:service: !DigitalSecurityCameraSettings:1
 
 ...
 }}}
+
+<br><br>
+
+*You are done*; the device should be ready to be used. If you think the device you created is a useful addition to the upnpx stack and you want it to be part of the open-source project, please email at : bruno.keymolen@gmail.com
+. 
