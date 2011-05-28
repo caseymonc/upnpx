@@ -27,7 +27,7 @@ http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
 
 For this example we now have the following XML files with service descriptions:
  * !DigitalSecurityCameraStillImage1.xml
- * !DigitalSecurityCameraSettings1
+ * !DigitalSecurityCameraSettings1.xml
  * !DigitalSecurityCameraMotionImage1.xml
 
 <br>
