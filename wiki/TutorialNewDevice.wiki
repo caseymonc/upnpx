@@ -25,6 +25,11 @@ http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
 
 2. For all Services; get the Service descriptions in section *3.  XML Service Description* and save them in XML files. Often the XML files are released as well so that saves the copy.
 
+For this example we now have the following XML files with service descriptions:
+ * DigitalSecurityCameraStillImage1.xml
+ * DigitalSecurityCameraSettings1
+ * DigitalSecurityCameraMotionImage1.xml
+
 <br>
 
 3. Use [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fscpdcodegenerator%2Fscpdcodegenerator.xcodeproj scpdcodegenerator] to create the Service Classes with the Soap Actions:
