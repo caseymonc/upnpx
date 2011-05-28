@@ -13,6 +13,8 @@ Basically, the same steps have to be done:
  * link against the C++ Standard Libraries (stdcc++) 
  * link the libupnpx.a into your project. 
 
+Check the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fxcode4%2Fupnpxdemo.xcworkspace upnpxdemo.xcworkspace] for a working Xcode 4 example.
+
 <br>
 
 During the tutorial we use the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fxcode3%2Fupnpx%2Fupnpx.xcodeproj ./upnpx/projects/xcode3/upnpxdemo/upnpxdemo.xcodeproj] as example code.
