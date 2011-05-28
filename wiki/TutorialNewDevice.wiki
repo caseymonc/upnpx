@@ -67,7 +67,7 @@ And add them to the upnpx project.
 Write the code for those 2 files. The most convenient way is to copy/paste the code of !MediaServer1Device and change the services with the ones that belong to your new device (the ones you just created)
 
 Example:
- * [[http://code.google.com/p/upnpx/source/browse/trunk/src/api/DigitalSecurityCamera1Device.h !DigitalSecurityCamera1Device.h]
+ * [http://code.google.com/p/upnpx/source/browse/trunk/src/api/DigitalSecurityCamera1Device.h DigitalSecurityCamera1Device.h]
  * [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/DigitalSecurityCamera1Device.m DigitalSecurityCamera1Device.m]
 
 <br>
