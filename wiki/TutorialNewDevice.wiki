@@ -2,7 +2,7 @@
 
 = Add a new device to the upnpx stack =
 
-upnpx has built in support for a number of devices and services but it is fairly possible you just need another one becuase new specifications are released or the device was not added from the start.
+upnpx has built in support for a number of devices and services, but it is possible you just need another one becuase new specifications are released or the device was not added from the start.
 
 Although it is possible to work with unknown devices and service through the Base classes [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice.h] and [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPService.h BasicUPnPService.h] it is adviced to add full support for your new device to the stack. This will save a lot of work for the long run. 
 
