@@ -41,8 +41,8 @@ iMac:upnpx bruno$
  * Add the files to the upnpx project.
 
 5. Create the following files:
- * ./upnpx/src/api/DigitalSecurityCamera1Device.h
- * ./upnpx/src/upnp/DigitalSecurityCamera1Device.m
+ * ./upnpx/src/api/!DigitalSecurityCamera1Device.h
+ * ./upnpx/src/upnp/!DigitalSecurityCamera1Device.m
 
 And add them to the upnpx project.
 
@@ -50,9 +50,18 @@ Write the code for those 2 files. The most convenient way is to copy/paste the c
 
 
 6. Add the new device to the Device Factory
- * Check the service types int *2.1. ServiceType*
+ * Check the service types int *2.1. !ServiceType*
 
 For our example it is:
-urn:schemasupnp-org:service: DigitalSecurityCameraSettings:1
+urn:schemasupnp-org:service: !DigitalSecurityCameraSettings:1
 
  * Add the Device to the [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/DeviceFactory.m Device Factory]
+
+{{{
+...
+
+}else if([[ssdp urn] isEqualToString:@"urn:schemas-upnp-org:device:DigitalSecurityCamera:1"]){
+      device =  [[DigitalSecurityCamera1Device alloc] initWithSSDPDevice:ssdp];
+
+...
+}}}
