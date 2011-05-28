@@ -4,7 +4,7 @@
 
 upnpx has built in support for a number of devices and services, but it is possible you just need another one becuase new specifications are released or the device was not added from the start.
 
-Although it is possible to work with unknown devices and service through the Base classes [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice.h] and [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPService.h BasicUPnPService.h] it is adviced to add full support for your new device to the stack. This will save a lot of work for the long run. 
+Although it is possible to work with unknown devices and service through the Base classes [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice.h] and [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPService.h BasicUPnPService.h] it is adviced to add full support for your new device to the stack. This will save you work in the long run. 
 
 Part of the source tree is the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fscpdcodegenerator%2Fscpdcodegenerator.xcodeproj scpdcodegenerator] which is a command line tool made to generate the service Soap Action classes from the XML descriptions.
 
