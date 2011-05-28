@@ -14,7 +14,7 @@ The following section explains the steps to add a new device.
 *Example, add the "!DigitalSecurityCamera" device:*
 <br>
 
-1. Check the specifications and Locate the Services used by the Device:
+1. Check the specifications and find the Services used by the Device:
 http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
 
 From the specifications we learn that the !DigitalSecurityCamera:1 has the following services:
