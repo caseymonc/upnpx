@@ -2,8 +2,16 @@
 
 = Add a new device to the upnpx stack =
 
-*Example, add the "!DigitalSecurityCamera" device:*
+upnpx has built in support for a number of devices and services but it is fairly possible you just need another one becuase new specifications are released or the device was not added from the start.
 
+Although it is possible to work with unknown devices and service through the Base classes [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPDevice.h BasicUPnPDevice.h] and [http://code.google.com/p/upnpx/source/browse/trunk/src/api/BasicUPnPService.h BasicUPnPService.h] it is adviced to add full support for your new device to the stack. This will save a lot of work for the long run. 
+
+Part of the source tree is the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fscpdcodegenerator%2Fscpdcodegenerator.xcodeproj scpdcodegenerator] which is a command line tool made to generate the service Soap Action classes from the XML descriptions.
+
+The following section explains the steps to add a new device.
+
+
+*Example, add the "!DigitalSecurityCamera" device:*
 <br>
 
 1. Check the specifications and Locate the Services used by the Device:
@@ -13,7 +21,9 @@ http://www.upnp.org/specs/ha/UPnP-ha-DigitalSecurityCamera-v1-Device.pdf
  * http://upnp.org/specs/ha/UPnP-ha-Settings-v1-Service.pdf
  * http://www.upnp.org/specs/ha/UPnP-ha-MotionImage-v1-Service.pdf
 
-2. For all Services; get the Service descriptions in section *3.  XML Service Description* and save them in XML files
+<br>
+
+2. For all Services; get the Service descriptions in section *3.  XML Service Description* and save them in XML files. Often the XML files are released as well so that saves the copy.
 
 <br>
 
@@ -34,6 +44,8 @@ iMac:upnpx bruno$ ls -al *.m *.h
 -rw-r--r--@ 1 bruno  staff   9060 May 26 23:31 SoapActionsDigitalSecurityCameraStillImage1.m
 iMac:upnpx bruno$ 
 }}}
+
+*Check if the tool does not report an error, if this happens check and correct the XML file.*
 
 <br>
 
@@ -61,10 +73,10 @@ Example:
 <br>
 
 6. Add the new device to the Device Factory
- * Check the service types int *2.1. !ServiceType*
+ * Check the device urn *
 
-For our example it is:
-urn:schemasupnp-org:service: !DigitalSecurityCameraSettings:1
+For our example, you find it in the device template specifications under *2.1. Device Type*:
+urn:schemas-upnp-org:device:!DigitalSecurityCamera:1
 
  * Add the Device to the [http://code.google.com/p/upnpx/source/browse/trunk/src/upnp/DeviceFactory.m Device Factory]
 
