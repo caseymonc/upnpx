@@ -11,7 +11,7 @@ Basically, the same steps have to be done, build upnpx, set the header paths to 
 
 <br>
 
-During the tutorial we use the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fiphone-xcode_3.n%2Fupnpxdemo ./upnpx/projects/iphone-xcode_3.n/upnpxdemo/upnpxdemo.xcodeproj] as example code.
+During the tutorial we use the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fxcode3%2Fupnpx%2Fupnpx.xcodeproj ./upnpx/projects/xcode3/upnpxdemo/upnpxdemo.xcodeproj] as example code.
 
 This is a "Navigation Based" application and in order to link libupnpx.a with it the following steps where done:
 
