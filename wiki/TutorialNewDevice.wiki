@@ -94,5 +94,5 @@ Example:
 
 <br><br>
 
-*You are done*; the device should be ready to be used. If you think the device you created is a useful addition to the upnpx stack and you want it to be part of the open-source project, please email at : bruno.keymolen@gmail.com
+*Congratulations, You are done*; the device should be ready to be used. If you think the device you created is a useful addition to the upnpx stack and you want it to be part of the open-source project, please email at : bruno.keymolen@gmail.com
 . 
