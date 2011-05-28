@@ -5,6 +5,8 @@
 
 <br>
 
+*Note on Xcode 4*
+
 This page demonstrates how to add the library libupnp.a into an *Xcode 3* project. Including libraries is somewhat changed in *Xcode 4*, refer to online documentation like [http://blog.carbonfive.com/2011/04/04/using-open-source-static-libraries-in-xcode-4 using-open-source-static-libraries-in-xcode-4] to find the necessary information.
 
 Basically, the same steps have to be done:
@@ -13,9 +15,11 @@ Basically, the same steps have to be done:
  * link against the C++ Standard Libraries (stdcc++) 
  * link the libupnpx.a into your project. 
 
-Check the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fxcode4%2Fupnpxdemo.xcworkspace upnpxdemo.xcworkspace] for a working Xcode 4 example.
+Check the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fxcode4%2Fupnpxdemo.xcworkspace upnpxdemo.xcworkspace] for an Xcode 4 project example.
 
 <br>
+
+* Xcode 3*
 
 During the tutorial we use the project [http://code.google.com/p/upnpx/source/browse/#svn%2Ftrunk%2Fprojects%2Fxcode3%2Fupnpx%2Fupnpx.xcodeproj ./upnpx/projects/xcode3/upnpxdemo/upnpxdemo.xcodeproj] as example code.
 
