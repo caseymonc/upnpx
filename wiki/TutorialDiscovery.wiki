@@ -18,7 +18,7 @@ Basically, there are 3 steps to complete to implement SSDP:
 
 1. Implement the Interface [http://code.google.com/p/upnpx/source/browse/trunk/src/api/UPnPDB.h UPnPDBObserver]: 
 
-[http://code.google.com/p/upnpx/source/browse/trunk/projects/xcode3/upnpxdemo/Classes/RootViewController.s RootViewController.h]:
+[http://code.google.com/p/upnpx/source/browse/trunk/projects/xcode3/upnpxdemo/Classes/RootViewController.h RootViewController.h]:
 {{{
 #import "UPnPDB.h"
 
