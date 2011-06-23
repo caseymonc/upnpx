@@ -51,7 +51,11 @@ Basically, there are 3 steps to complete to implement SSDP:
 
     [db addObserver:(UPnPDBObserver*)self];
     
-    [[[UPnPManager GetInstance] SSDP] searchSSDP]; 	
+    //Optional; set User Agent
+    [[[UPnPManager GetInstance] SSDP] setUserAgentProduct:@"upnpxdemo/1.0" andOS:@"OSX"];
+    
+    //Search for UPnP Devices 
+    [[[UPnPManager GetInstance] SSDP] searchSSDP];      
     
     self.title = @"upnpx demo";
 }
