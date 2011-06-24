@@ -5,7 +5,7 @@
 
 <br>
 
-<font color=red>*Note on Xcode 4 and XCode 3.2.6, 3.25*</font>
+<font color=red>*Note on Xcode 4 and XCode 3.2.6, 3.2.5*</font>
 
 This page demonstrates how to add the library libupnp.a into an *Xcode 3.2.2* project. Linking against static libraries is somewhat changed in *Xcode 4* and *Xcode 3.2.6*, refer to online documentation to find the details of linking to a static library for your version of Xcode.
 
