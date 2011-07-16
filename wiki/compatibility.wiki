@@ -1,5 +1,3 @@
-#sidebar TutorialIndex
-
 == Compatibility ==
 
 upnpx was tested and confirmed working with the following :
