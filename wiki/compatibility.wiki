@@ -1,0 +1,21 @@
+#sidebar TutorialIndex
+
+== Compatibility ==
+
+upnpx was tested and confirmed working with the following :
+
+ * [http://mediatomb.cc Mediatomb] 
+ * [http://ushare.geexbox.org ushare] 
+ * [http://www.imediashare.tv iMediaShare for iPhone]
+
+ * [http://www.elgato.com/elgato/na/mainmenu/products/software/EyeConnect.en.html EyeConnect]
+ * [http://www.twonkey.com Twonky (Pre-Installed on my NAS)] 
+
+ * [http://www.lacie.com LaCie 2big Network 2]
+ * [http://www.gracedigitalaudio.com/innovator-iii-wifi-internet-radio-media-streamer-p-95.html Grace Wireless Internet Radio]
+ * [http://www.freecom.com FreeCom Internet Radio]
+
+
+
+upnpx is expected to work together with any UPnP ready device. 
+If you have tested and confirmed working with anything not listed here, please let me know so I can add it to the list: bruno.keymolen@gmail.com . 
