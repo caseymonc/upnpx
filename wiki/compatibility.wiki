@@ -18,4 +18,4 @@ upnpx was tested and confirmed working with the following :
 
 
 upnpx is expected to work together with any UPnP ready device. 
-If you have tested and confirmed working with anything not listed here, please let me know so I can add it to the list: bruno.keymolen@gmail.com . 
+If you have tested it and confirmed working with anything not listed here, please let me know so I can add it to the list: bruno.keymolen@gmail.com . 
