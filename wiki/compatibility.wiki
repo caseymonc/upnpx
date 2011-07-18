@@ -9,6 +9,8 @@ upnpx was tested and confirmed working with the following :
  * [http://www.elgato.com/elgato/na/mainmenu/products/software/EyeConnect.en.html EyeConnect]
  * [http://www.twonkey.com Twonky (Pre-Installed on my NAS)] 
 
+ * [http://windows.microsoft.com/en-US/windows-vista/Share-your-media-in-Windows-Media-Player-with-other-people-or-devices Windows Media Sharing (Tested with Windows 7)] 
+
  * [http://www.lacie.com LaCie 2big Network 2]
  * [http://www.gracedigitalaudio.com/innovator-iii-wifi-internet-radio-media-streamer-p-95.html Grace Wireless Internet Radio]
  * [http://www.freecom.com FreeCom Internet Radio]
