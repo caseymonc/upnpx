@@ -5,6 +5,8 @@ upnpx was tested and confirmed working with the following :
  * [http://mediatomb.cc Mediatomb] 
  * [http://ushare.geexbox.org ushare] 
  * [http://www.imediashare.tv iMediaShare for iPhone]
+ * asset on Windows 7 :  [http://www.dbpoweramp.com/asset-upnp-dlna.htm]
+ * minidlna on Ubuntu Linux : [http://sourceforge.net/projects/minidlna/]
 
  * [http://www.elgato.com/elgato/na/mainmenu/products/software/EyeConnect.en.html EyeConnect]
  * [http://www.twonkey.com Twonky (Pre-Installed on my NAS)] 
