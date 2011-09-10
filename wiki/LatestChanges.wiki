@@ -1,8 +1,8 @@
-
 *September 9 2011 - Release 1.2.3*
 
 September 9 2011
  * Fix: memory leaks
+ * Full access to all media resources in MediaServer1ItemObject (MediaServer1ItemRes[])
 September 3 2011
  * Fix; processor usage could go up to 100% due to bug in http server
  * Fix; memory leak; did not properly release playlist data in certain cases
