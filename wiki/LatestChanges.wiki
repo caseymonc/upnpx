@@ -1,3 +1,5 @@
+September 9 2011
+ * Fix: memory leaks
 September 3 2011
  * Fix; processor usage could go up to 100% due to bug in http server
  * Fix; memory leak; did not properly release playlist data in certain cases
