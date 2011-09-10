@@ -1,3 +1,6 @@
+
+*September 9 2011 - Release 1.2.3*
+
 September 9 2011
  * Fix: memory leaks
 September 3 2011
@@ -6,5 +9,8 @@ September 3 2011
 July 19 2011
  * Supports Windows Media Sharing 
  * [compatibility Compatibility]
+
+*June 4 2011 - Release 1.2.2*
+
 June 2011
  * Added the latest [http://upnp.org/specs/phone/phone1/ Telephony:1] specifications; [http://upnp.org/specs/phone/UPnP-phone-TelephonyClient-v1-Device.pdf TelephonyClient:1], [http://upnp.org/specs/phone/UPnP-phone-TelephonyServer-v1-Device.pdf TelephonyServer:1] and [http://upnp.org/specs/phone/phone1/ Services].
