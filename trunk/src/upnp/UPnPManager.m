@@ -55,19 +55,19 @@ static UPnPManager *_upnpmanager = nil;
 }
 
 -(id)init{
-	[super init];
-	
-	upnpEvents = [[UPnPEvents alloc] init];
-	soapFactory = [[SoapActionFactory alloc] init];
-	serviceFactory = [[ServiceFactory alloc] init];
-	deviceFactory = [[DeviceFactory alloc] init];
-	SSDP = [[SSDPDB_ObjC alloc] init];
-	DB = [[UPnPDB alloc] initWithSSDP:SSDP]; 
-	defaultPlaylist = [[MediaPlaylist alloc] init];
+    self = [super init];
+    
+    if (self) {
+        upnpEvents = [[UPnPEvents alloc] init];
+        soapFactory = [[SoapActionFactory alloc] init];
+        serviceFactory = [[ServiceFactory alloc] init];
+        deviceFactory = [[DeviceFactory alloc] init];
+        SSDP = [[SSDPDB_ObjC alloc] init];
+        DB = [[UPnPDB alloc] initWithSSDP:SSDP]; 
+        defaultPlaylist = [[MediaPlaylist alloc] init];
 
-		
-
-	[SSDP startSSDP];
+        [SSDP startSSDP];
+    }
 	
 	return self;
 }

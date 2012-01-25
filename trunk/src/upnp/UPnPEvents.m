@@ -38,16 +38,18 @@
 @implementation UPnPEvents
 
 -(id)init{
-	[super init];
-	
-	mMutex = [[NSRecursiveLock alloc] init];
-	mEventSubscribers = [[NSMutableDictionary alloc] init];
-	parser =[[UPnPEventParser alloc] init];
-	
-	server = [[BasicHTTPServer_ObjC alloc] init];
-	[server start];
-	[server addObserver:(BasicHTTPServer_ObjC_Observer*)self];
-	
+    self = [super init];
+    
+    if (self) {		
+        mMutex = [[NSRecursiveLock alloc] init];
+        mEventSubscribers = [[NSMutableDictionary alloc] init];
+        parser =[[UPnPEventParser alloc] init];
+        
+        server = [[BasicHTTPServer_ObjC alloc] init];
+        [server start];
+        [server addObserver:(BasicHTTPServer_ObjC_Observer*)self];
+	}
+
 	return self;
 }
 

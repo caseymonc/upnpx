@@ -21,12 +21,15 @@
 -(id)initWithMediaDevice:(MediaServer1Device*)device andHeader:(NSString*)header andRootId:(NSString*)rootId{
     self = [super init];
     
-    m_device = device;
-    m_rootId=rootId;
-    m_title=header;
-    
-    m_playList = [[NSMutableArray alloc] init];
-    
+    if (self) {
+        /* TODO: Properties are not retained. Possible issue? */
+        m_device = device;
+        m_rootId=rootId;
+        m_title=header;
+        
+        m_playList = [[NSMutableArray alloc] init];
+    }
+
     return self;
 }
 

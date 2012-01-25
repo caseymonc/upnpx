@@ -190,17 +190,21 @@ private:
 
 
 -(id)init{
-	[super init];
-	
-	mObservers = [[NSMutableArray alloc] init];
-	httpServerWrapper = new BasicHTTPObserver_wrapper(self);
-	
+    self = [super init];
+    
+    if (self) {	
+        mObservers = [[NSMutableArray alloc] init];
+        httpServerWrapper = new BasicHTTPObserver_wrapper(self);
+	}
+    
 	return self;
 }
 
 -(void)dealloc{
 	[self stop];
-	delete((BasicHTTPObserver_wrapper*)httpServerWrapper);
+    if (httpServerWrapper) {
+        delete((BasicHTTPObserver_wrapper*)httpServerWrapper);
+    }
 	[mObservers release];
 	
 	[super dealloc];

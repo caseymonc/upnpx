@@ -80,19 +80,26 @@ private:
 @implementation SocketServer_ObjC
 
 -(id)init{
-	[super init];	
-
-	mCppSocketServer = new SocketServer(42809);
-	mCppSocketServerObserverWrapper = new SocketServerObserver_wrapper(self, (SocketServer*)mCppSocketServer);
-
+    self = [super init];
+    
+    if (self) {	
+        mCppSocketServer = new SocketServer(42809);
+        mCppSocketServerObserverWrapper = new SocketServerObserver_wrapper(self, (SocketServer*)mCppSocketServer);
+    }
+    
 	return self;
 }
 	
 -(void)dealloc{
-	((SocketServer*)mCppSocketServer)->Stop();
-	delete((SocketServer*)mCppSocketServer);
-	delete((SocketServerObserver_wrapper*)mCppSocketServerObserverWrapper);
-	
+    if (mCppSocketServer) {
+        ((SocketServer*)mCppSocketServer)->Stop();
+        delete((SocketServer*)mCppSocketServer);
+    }
+    
+    if (mCppSocketServerObserverWrapper) {
+        delete((SocketServerObserver_wrapper*)mCppSocketServerObserverWrapper);
+	}
+    
 	[super dealloc];
 }
 
