@@ -11,10 +11,11 @@
 #import "MediaServerBasicObjectParser.h"
 #import "MediaServer1ItemObject.h"
 #import "MediaServer1ContainerObject.h"
-
+#import "PlayBack.h"
 
 @implementation FolderViewController
 
+@synthesize titleLabel;
 
 
 
@@ -90,6 +91,28 @@
     [outNumberReturned release];
     [outTotalMatches release];
     [outUpdateID release];
+    
+    
+    self.navigationController.toolbarHidden = NO;
+    
+    
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0 , 11.0f, self.navigationController.view.frame.size.width, 21.0f)];
+    [self.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
+    [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+    [self.titleLabel setTextColor:[UIColor colorWithRed:255.0 green:255.0 blue:255.0 alpha:1.0]];
+    
+    if([[PlayBack GetInstance] renderer] == nil){
+        [self.titleLabel setText:@"No Renderer Selected"];        
+    }else{
+        [self.titleLabel setText:[[[PlayBack GetInstance] renderer] friendlyName] ];
+    }
+    
+    [self.titleLabel setTextAlignment:UITextAlignmentLeft];
+    UIBarButtonItem *ttitle = [[UIBarButtonItem alloc] initWithCustomView:self.titleLabel];
+    NSArray *items = [NSArray arrayWithObjects:ttitle, nil]; 
+    self.toolbarItems = items; 
+    [ttitle release];
+
     
     self.title = m_title;    
     
@@ -231,7 +254,11 @@
             NSLog(@"%@ - %d, %@, %d, %d, %d, %@", [item title], [resource bitrate], [resource duration], [resource nrAudioChannels], [resource size],  [resource durationInSeconds],  [resource protocolInfo] );
         }	    
 
+        [[PlayBack GetInstance] Play:m_playList position:indexPath.row];
+        
     }
 }
+
+
 
 @end

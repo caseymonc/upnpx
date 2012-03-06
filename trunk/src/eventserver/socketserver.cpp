@@ -89,13 +89,17 @@ int SocketServer::getLocalIPAddress(char ip[16], int sWaitUntilFound){
 			thisaddress = interfaces;
 			while(thisaddress != NULL){
 				if(thisaddress->ifa_addr->sa_family == AF_INET){
-					unsigned int flags = thisaddress->ifa_flags; 
-					if( (flags & IFF_UP) && (flags & IFF_RUNNING) && !(flags & IFF_LOOPBACK) ){
-						char* t = inet_ntoa(((struct sockaddr_in*)thisaddress->ifa_addr)->sin_addr);
-						strcpy(ip, t);
-						ret = 0; //found
-						break;
-					}
+                    printf("thisaddress->ifa_name:%s\n", thisaddress->ifa_name);
+                  //  if (strncmp (thisaddress->ifa_name,"en0",3) == 0) {
+                        unsigned int flags = thisaddress->ifa_flags; 
+                        if( (flags & IFF_UP) && (flags & IFF_RUNNING) && !(flags & IFF_LOOPBACK) ){
+                            char* t = inet_ntoa(((struct sockaddr_in*)thisaddress->ifa_addr)->sin_addr);
+                            strcpy(ip, t);
+                            ret = 0; //found
+                            printf("FOUND thisaddress->ifa_name:%s\n", thisaddress->ifa_name);
+                            break;
+                        }
+                  //  }
 				}
 				thisaddress = thisaddress->ifa_next;
 			}
@@ -232,7 +236,7 @@ int SocketServer::ReadLoop(){
 	int ret = 0;
 	mReadLoop = 1;
 	
-	SOCKET highSocket = mServerSocket;
+	int highSocket = mServerSocket;
 	
 	struct timeval timeout;
 	timeout.tv_sec = 5;
@@ -260,6 +264,9 @@ int SocketServer::ReadLoop(){
 		FD_SET(mServerSocket, &mReadFDS);
 		FD_SET(mServerSocket, &mWriteFDS);
 		FD_SET(mServerSocket, &mExceptionFDS);
+
+        //printf("mServerSocket=%d, highSocket=%d, sizeof(mReadFDS)=%d\n", mServerSocket,highSocket,sizeof(mReadFDS));
+        
 		
 		//Set the connections
 		SOCKET thisSocket;
@@ -269,14 +276,19 @@ int SocketServer::ReadLoop(){
 			FD_SET(thisSocket, &mReadFDS);
 			FD_SET(thisSocket, &mExceptionFDS);
             FD_SET(thisSocket, &mWriteFDS);
+            if(thisSocket > highSocket){
+                highSocket = thisSocket;
+            }					
 		}
 			
 
         timeout.tv_sec = 5;
         timeout.tv_usec = 0;
 			
-		ret = select(highSocket+1, &mReadFDS, &mWriteFDS, &mExceptionFDS, &timeout);
-
+		//ret = select(highSocket+1, &mReadFDS, &mWriteFDS, &mExceptionFDS, &timeout);
+        ret = select(8*sizeof(mReadFDS), &mReadFDS, &mWriteFDS, &mExceptionFDS, &timeout);
+        
+        
 		if(ret == SOCKET_ERROR){
             //Error
 			break;
@@ -295,9 +307,6 @@ int SocketServer::ReadLoop(){
 					SOCKET newSocket = accept(mServerSocket, (sockaddr*)&sender, &senderlen);
 					SocketServerConnection* newConnection = new SocketServerConnection(newSocket, &sender);
 					mConnections.push_back(newConnection);
-					if(newSocket > highSocket){
-						highSocket = newSocket;
-					}					
 				}else{
 					printf("New Connection Refused because connection pool is full!\n");
 				}
