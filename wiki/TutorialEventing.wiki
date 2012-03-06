@@ -42,8 +42,5 @@ if([[self avTransportService] isObserver:(BasicUPnPServiceObserver*)self] == NO)
 }}}
 
 <br><br>
-_A functional example of playback and events:_
-[http://code.google.com/p/upnpx/source/browse/trunk/projects/xcode4/upnpxdemo/upnpxdemo/PlayBack.h]
-[http://code.google.com/p/upnpx/source/browse/trunk/projects/xcode4/upnpxdemo/upnpxdemo/PlayBack.m]
-<br><br>
+
 Next [TutorialPresentation Step 5. Presentation]
