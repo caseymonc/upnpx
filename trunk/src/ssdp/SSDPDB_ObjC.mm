@@ -226,13 +226,13 @@ private:
         isdevice	= dev->isdevice==1?true:false;
         isroot		= dev->isroot==1?true:false;
         isservice	= dev->isservice==1?true:false;
-        uuid		= [[NSString alloc] initWithCString:dev->uuid.c_str()];
-        urn			= [[NSString alloc] initWithCString:dev->urn.c_str()];
-        usn			= [[NSString alloc] initWithCString:dev->usn.c_str()];
-        type		= [[NSString alloc] initWithCString:dev->type.c_str()];
-        version		= [[NSString alloc] initWithCString:dev->version.c_str()];
-        host		= [[NSString alloc] initWithCString:dev->host.c_str()];
-        location	= [[NSString alloc] initWithCString:dev->location.c_str()];	
+        uuid		= [[NSString alloc] initWithCString:dev->uuid.c_str() encoding:NSASCIIStringEncoding];
+        urn			= [[NSString alloc] initWithCString:dev->urn.c_str() encoding:NSASCIIStringEncoding];
+        usn			= [[NSString alloc] initWithCString:dev->usn.c_str() encoding:NSASCIIStringEncoding];
+        type		= [[NSString alloc] initWithCString:dev->type.c_str() encoding:NSASCIIStringEncoding];
+        version		= [[NSString alloc] initWithCString:dev->version.c_str() encoding:NSASCIIStringEncoding];
+        host		= [[NSString alloc] initWithCString:dev->host.c_str() encoding:NSASCIIStringEncoding];
+        location	= [[NSString alloc] initWithCString:dev->location.c_str() encoding:NSASCIIStringEncoding];	
         ip			= dev->ip;
         port		= dev->port;
 	}

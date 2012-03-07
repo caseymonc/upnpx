@@ -215,5 +215,20 @@
 	return ret;
 }
 
+-(void)SubscriptionTimerExpiresIn:(int)seconds timeoutSubscription:(int)timeout timeSubscription:(double)subscribed{
 
+	//Re-Subscribe
+	if(eventURL){
+        NSString *oldUUID = eventUUID;
+		eventUUID = [[[UPnPManager GetInstance] upnpEvents] Subscribe:(UPnPEvents_Observer*)self]; 		
+        if(eventUUID != nil){
+            //NSLog(@"Service Re-Subsrcibed for events; uuid:%@, old uuid:%@", eventUUID, oldUUID);
+            //Unsubscribe old
+            [[[UPnPManager GetInstance] upnpEvents] UnSubscribe:oldUUID];
+            [oldUUID release];
+			[eventUUID retain];
+			isSupportForEvents = YES;
+		}
+	}
+}
 @end

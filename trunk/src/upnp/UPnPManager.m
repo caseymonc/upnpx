@@ -67,12 +67,14 @@ static UPnPManager *_upnpmanager = nil;
         defaultPlaylist = [[MediaPlaylist alloc] init];
 
         [SSDP startSSDP];
+        [upnpEvents start];
     }
 	
 	return self;
 }
 
 -(void)dealloc{
+    [upnpEvents stop];
 	[SSDP stopSSDP];
 	[SSDP release];
 	[DB release];

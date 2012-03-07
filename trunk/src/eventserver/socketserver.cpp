@@ -41,6 +41,8 @@
 #include <sys/socket.h>
 #include <ifaddrs.h>
 
+#include "iphoneport.h"
+
 #define IFF_UP          0x1             /* interface is up              */
 #define IFF_BROADCAST   0x2             /* broadcast address valid      */
 #define IFF_DEBUG       0x4             /* turn on debugging            */
@@ -89,8 +91,9 @@ int SocketServer::getLocalIPAddress(char ip[16], int sWaitUntilFound){
 			thisaddress = interfaces;
 			while(thisaddress != NULL){
 				if(thisaddress->ifa_addr->sa_family == AF_INET){
-                    printf("thisaddress->ifa_name:%s\n", thisaddress->ifa_name);
-                  //  if (strncmp (thisaddress->ifa_name,"en0",3) == 0) {
+#ifdef UPNPX_PREFFERED_IFACE
+                     if (strncmp (thisaddress->ifa_name,UPNPX_PREFFERED_IFACE,strlen(UPNPX_PREFFERED_IFACE)) == 0) {
+#endif
                         unsigned int flags = thisaddress->ifa_flags; 
                         if( (flags & IFF_UP) && (flags & IFF_RUNNING) && !(flags & IFF_LOOPBACK) ){
                             char* t = inet_ntoa(((struct sockaddr_in*)thisaddress->ifa_addr)->sin_addr);
@@ -99,8 +102,10 @@ int SocketServer::getLocalIPAddress(char ip[16], int sWaitUntilFound){
                             printf("FOUND thisaddress->ifa_name:%s\n", thisaddress->ifa_name);
                             break;
                         }
-                  //  }
-				}
+#ifdef UPNPX_PREFFERED_IFACE
+                    }
+#endif
+                }
 				thisaddress = thisaddress->ifa_next;
 			}
 			freeifaddrs(interfaces);
@@ -284,9 +289,13 @@ int SocketServer::ReadLoop(){
 
         timeout.tv_sec = 5;
         timeout.tv_usec = 0;
-			
-		//ret = select(highSocket+1, &mReadFDS, &mWriteFDS, &mExceptionFDS, &timeout);
+
+#ifdef UPNPX_IPHONE     
+        //Not sure why but 1024 seems to be the only one that work on the iPhone device
         ret = select(8*sizeof(mReadFDS), &mReadFDS, &mWriteFDS, &mExceptionFDS, &timeout);
+#else
+		ret = select(highSocket+1, &mReadFDS, &mWriteFDS, &mExceptionFDS, &timeout);
+#endif 
         
         
 		if(ret == SOCKET_ERROR){
