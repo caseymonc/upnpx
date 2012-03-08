@@ -1,7 +1,9 @@
 == Compatibility ==
 
-upnpx was tested and confirmed working with the following :
+upnpx is confirmed working, by users, with the following:
+
  * [http://ayuda.orange.es/internet/configuracion-y-descargas/routers-y-modems/livebox-2-0.html LiveBox 2]
+ * [http://www.psaudio.com/products/audio/media-players/ PS AUDIO PWD DAC with Bridge UpNP]
 
  * [http://mediatomb.cc Mediatomb] 
  * [http://ushare.geexbox.org ushare] 
