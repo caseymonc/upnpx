@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'upnp-ios' target in the 'upnp-ios' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
