@@ -1,6 +1,5 @@
-May 1 2013
-* Merged in quite a number of changes made by the people of SlingMedia http://www.slingbox.com.
- They added multithreaded support + memory leak fixes.
+ * May 1 2013
+Merged in quite a number of changes made by the people of SlingMedia http://www.slingbox.com. They added multithreaded support + memory leak fixes.
 
 All credits and thanks for these changes go to:
 
