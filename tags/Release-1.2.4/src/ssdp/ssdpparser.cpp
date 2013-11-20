@@ -192,6 +192,10 @@ EXIT:
 SSDP_TYPE SSDPParser::GetType(){
 	return mType;
 }
+
+vector<SSDP_HTTP_HEADER*> SSDPParser::GetHeaders() {
+	return mHeaders
+}
 		
 
 /**
