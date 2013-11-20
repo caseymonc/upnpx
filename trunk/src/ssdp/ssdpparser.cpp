@@ -194,7 +194,7 @@ SSDP_TYPE SSDPParser::GetType(){
 }
 
 vector<SSDP_HTTP_HEADER*> SSDPParser::GetHeaders() {
-	return mHeaders
+	return mHeaders;
 }
 		
 
