@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Open Source Mac OS X / iOS Cocoa UPnP Stack.'
   s.homepage = 'http://code.google.com/p/upnpx/'
   s.authors  = { 'Bruno Keymolen' => 'bruno.keymolen@gmail.com' }
-  s.source   = { :svn  => 'http://upnpx.googlecode.com/svn', :tag => 'Release-1.2.4' }
+  s.source   = { :git  => 'https://github.com/caseymonc/upnpx.git' }
 
   s.description = 'Static OS X & iOS UPnP library written in Cocoa (UPnP) and C++ (SSDP).' \
     'The Current implementation has support for control point/client only.'

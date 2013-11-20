@@ -49,6 +49,7 @@ public:
 	~SSDPParser();
 	int ReInit();
 	int Parse(struct sockaddr* sender, u8* buf, u32 len);
+	vector<SSDP_HTTP_HEADER*> GetHeaders();
 	SSDP_TYPE GetType();
 private:
 	int ReadLine(u8 *buf, u32 len, u8 **restbuf, u32 *restlen);
